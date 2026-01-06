@@ -517,3 +517,116 @@ code {
 .iconbtn:not(.is-primary):hover {
   opacity: 1;
 }
+
+/* Social row: mobile-friendly */
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Bigger tap targets + consistent look */
+.iconbtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--panel) 86%, transparent);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Primary emphasis */
+.iconbtn.is-primary {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+}
+
+/* Subtle de-emphasis for secondary icons */
+.iconbtn:not(.is-primary) {
+  opacity: 0.9;
+}
+.iconbtn:not(.is-primary):hover { opacity: 1; }
+
+.iconbtn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Tooltips (desktop/keyboard) */
+.iconbtn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 0.8rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  box-shadow: var(--shadow);
+  z-index: 20;
+}
+.iconbtn:hover::after,
+.iconbtn:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* On touch devices, tooltips are annoying—disable them */
+@media (hover: none) and (pointer: coarse) {
+  .iconbtn::after { display: none; }
+}
+
+/* Mobile sizing: slightly larger and tighter spacing */
+@media (max-width: 520px) {
+  .social { gap: 8px; }
+  .iconbtn { width: 48px; height: 48px; }
+  .iconbtn svg { width: 21px; height: 21px; }
+}
+
+/* Globe animation (only on hover-capable devices) */
+@media (hover: hover) and (pointer: fine) {
+  .iconbtn.is-globe svg {
+    transition: transform 0.2s ease;
+    transform-origin: 50% 50%;
+  }
+
+  .iconbtn.is-globe:hover svg,
+  .iconbtn.is-globe:focus-visible svg {
+    transform: rotate(-12deg) scale(1.06);
+  }
+}
+
+/* Optional: gentle pulse ring for primary globe only */
+@media (hover: hover) and (pointer: fine) {
+  .iconbtn.is-globe.is-primary::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .iconbtn.is-globe.is-primary:hover::before,
+  .iconbtn.is-globe.is-primary:focus-visible::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
