@@ -1,50 +1,71 @@
 {% assign s = site.data.profile.social %}
 
 <div class="social" aria-label="Social links">
-  {% if s.github and s.github != "" %}
-    <a class="iconbtn" href="{{ s.github }}" aria-label="GitHub" rel="me">
+  {% if s.github %}
+    <a class="iconbtn is-primary"
+       href="{{ s.github }}"
+       aria-label="GitHub"
+       data-tooltip="GitHub"
+       rel="me">
       {% include svg/github.svg %}
     </a>
   {% endif %}
 
-  {% if s.email and s.email != "" %}
-    <a class="iconbtn" href="mailto:{{ s.email | escape }}" aria-label="Email">
-      {% include svg/mail.svg %}
-    </a>
-  {% endif %}
-
-  {% if s.linkedin and s.linkedin != "" %}
-    <a class="iconbtn" href="{{ s.linkedin }}" aria-label="LinkedIn" rel="me">
+  {% if s.linkedin %}
+    <a class="iconbtn is-primary"
+       href="{{ s.linkedin }}"
+       aria-label="LinkedIn"
+       data-tooltip="LinkedIn"
+       rel="me">
       {% include svg/linkedin.svg %}
     </a>
   {% endif %}
 
-  {% if s.x and s.x != "" %}
-    <a class="iconbtn" href="{{ s.x }}" aria-label="X (Twitter)" rel="me">
+  {% if s.x %}
+    <a class="iconbtn"
+       href="{{ s.x }}"
+       aria-label="X"
+       data-tooltip="X (Twitter)"
+       rel="me">
       {% include svg/x.svg %}
     </a>
   {% endif %}
 
-  {% if s.youtube and s.youtube != "" %}
-    <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube" rel="me">
-      {% include svg/youtube.svg %}
-    </a>
-  {% endif %}
-
-  {% if s.instagram and s.instagram != "" %}
-    <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram" rel="me">
+  {% if s.instagram %}
+    <a class="iconbtn"
+       href="{{ s.instagram }}"
+       aria-label="Instagram"
+       data-tooltip="Instagram"
+       rel="me">
       {% include svg/instagram.svg %}
     </a>
   {% endif %}
 
-  {% if s.snapchat and s.snapchat != "" %}
-    <a class="iconbtn" href="{{ s.snapchat }}" aria-label="Snapchat" rel="me">
+  {% if s.youtube %}
+    <a class="iconbtn"
+       href="{{ s.youtube }}"
+       aria-label="YouTube"
+       data-tooltip="YouTube"
+       rel="me">
+      {% include svg/youtube.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.snapchat %}
+    <a class="iconbtn"
+       href="{{ s.snapchat }}"
+       aria-label="Snapchat"
+       data-tooltip="Snapchat"
+       rel="me">
       {% include svg/snapchat.svg %}
     </a>
   {% endif %}
 
-  {% if s.website and s.website != "" %}
-    <a class="iconbtn" href="{{ s.website }}" aria-label="Website">
+  {% if s.website %}
+    <a class="iconbtn"
+       href="{{ s.website }}"
+       aria-label="Website"
+       data-tooltip="Website">
       {% include svg/link.svg %}
     </a>
   {% endif %}
