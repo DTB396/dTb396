@@ -1,34 +1,16 @@
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>{{ page.title | default: site.title }}</title>
+  <title>
+    {% if page.title %}{{ page.title }} · {% endif %}{{ site.title | default: "DTB396" }}
+  </title>
 
-  {% assign meta_desc = page.description | default: site.description %}
-  <meta name="description" content="{{ meta_desc | escape }}" />
-
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
-  <link rel="icon" href="{{ "/assets/img/og-card.svg" | relative_url }}" type="image/svg+xml" />
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="{{ site.title | escape }}" />
-  <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title | escape }}" />
-  <meta property="og:description" content="{{ page.og_description | default: meta_desc | escape }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
-  <meta property="og:image" content="{{ site.og_image | absolute_url }}" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{ page.og_title | default: page.title | default: site.title | escape }}" />
-  <meta name="twitter:description" content="{{ page.og_description | default: meta_desc | escape }}" />
-  <meta name="twitter:image" content="{{ site.og_image | absolute_url }}" />
-
-  <!-- Basic SEO -->
-  <meta name="robots" content="index,follow" />
+  {% if page.description %}
+  <meta name="description" content="{{ page.description | escape }}">
+  {% elsif site.description %}
+  <meta name="description" content="{{ site.description | escape }}">
+  {% endif %}
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-
