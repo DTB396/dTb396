@@ -62,7 +62,6 @@ permalink: /about/
 </div>
 
 <div class="contact-icons">
-  {% include social-icons.html %}
 </div>
   </div>
 </section>
