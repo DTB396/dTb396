@@ -61,12 +61,16 @@
     </a>
   {% endif %}
 
-  {% if s.website %}
-    <a class="iconbtn"
-       href="{{ s.website }}"
-       aria-label="Website"
-       data-tooltip="Website">
+{% assign sites = site.data.profile.websites %}
+
+{% if sites %}
+  {% for site in sites %}
+    <a class="iconbtn {% if site.primary %}is-primary{% endif %}"
+       href="{{ site.url }}"
+       aria-label="{{ site.label }}"
+       data-tooltip="{{ site.label }}">
       {% include svg/link.svg %}
     </a>
-  {% endif %}
+  {% endfor %}
+{% endif %}
 </div>
