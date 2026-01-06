@@ -2,7 +2,7 @@
 
 <div class="social" aria-label="Social links">
   {% if s.github and s.github != "" %}
-    <a class="iconbtn" href="{{ s.github }}" aria-label="GitHub">
+    <a class="iconbtn" href="{{ s.github }}" aria-label="GitHub" rel="me">
       {% include svg/github.svg %}
     </a>
   {% endif %}
@@ -14,26 +14,32 @@
   {% endif %}
 
   {% if s.linkedin and s.linkedin != "" %}
-    <a class="iconbtn" href="{{ s.linkedin }}" aria-label="LinkedIn">
+    <a class="iconbtn" href="{{ s.linkedin }}" aria-label="LinkedIn" rel="me">
       {% include svg/linkedin.svg %}
     </a>
   {% endif %}
 
   {% if s.x and s.x != "" %}
-    <a class="iconbtn" href="{{ s.x }}" aria-label="X">
+    <a class="iconbtn" href="{{ s.x }}" aria-label="X (Twitter)" rel="me">
       {% include svg/x.svg %}
     </a>
   {% endif %}
 
   {% if s.youtube and s.youtube != "" %}
-    <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube">
+    <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube" rel="me">
       {% include svg/youtube.svg %}
     </a>
   {% endif %}
 
   {% if s.instagram and s.instagram != "" %}
-    <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram">
+    <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram" rel="me">
       {% include svg/instagram.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.snapchat and s.snapchat != "" %}
+    <a class="iconbtn" href="{{ s.snapchat }}" aria-label="Snapchat" rel="me">
+      {% include svg/snapchat.svg %}
     </a>
   {% endif %}
 
