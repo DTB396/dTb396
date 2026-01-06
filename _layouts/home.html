@@ -4,43 +4,68 @@ layout: default
 
 {% assign profile = site.data.profile %}
 {% assign links = site.data.links %}
+{% assign pinned_count = links.pinned | size %}
 
+<section class="hero hero--clean" aria-label="Hero">
+  <div class="container">
+    <div class="hero__grid">
+      <!-- Left -->
+      <div class="hero__copy">
+        <h1 class="hero__title">{{ profile.name }}</h1>
 
-<section class="hero" style="padding:72px 0 48px 0;background:linear-gradient(120deg,#e9eef7 0%,#f8fafc 100%),var(--bg);border-bottom:1px solid var(--border);">
-  <div class="container" style="max-width:1100px;">
-    <div class="hero__grid" style="align-items:center;gap:48px;">
-      <div style="padding:0 0 0 12px;">
-        <h1 class="hero__title" style="font-size:2.8rem;line-height:1.08;margin-bottom:12px;font-family:ui-sans-serif,system-ui,sans-serif;letter-spacing:-0.03em;font-weight:800;">{{ profile.name }}</h1>
-        <p class="hero__subtitle" style="font-size:1.18rem;margin-bottom:22px;color:var(--muted);font-weight:500;">{{ profile.descriptor }}</p>
-        <p class="hero__location" style="font-size:1.02rem;color:var(--muted);margin-bottom:28px;letter-spacing:0.01em;">
-          <span style="font-weight:600;">{{ profile.location }}</span>
-        </p>
-        <div style="margin-bottom:28px;">
-          <span style="display:inline-block;background:linear-gradient(90deg,#7aa2ff 60%,#7cffc7 100%);color:#fff;padding:7px 20px;border-radius:999px;font-weight:700;font-size:1.08rem;box-shadow:0 2px 12px #7aa2ff22;letter-spacing:0.02em;">Builder • Operator • Investor-Ready</span>
+        {% if profile.descriptor %}
+          <p class="hero__subtitle">{{ profile.descriptor }}</p>
+        {% endif %}
+
+        {% if profile.location %}
+          <p class="hero__location"><strong>{{ profile.location }}</strong></p>
+        {% endif %}
+
+        <div class="hero__badgeRow" aria-label="Roles">
+          <span class="hero__badge">Builder</span>
+          <span class="hero__badge">Operator</span>
+          <span class="hero__badge">Investor-Ready</span>
         </div>
-        <div class="hero__cta" style="margin-bottom:24px;gap:12px;">
-          <a class="btn" style="font-size:1.08rem;padding:13px 28px;box-shadow:0 4px 16px #7aa2ff22;font-weight:700;letter-spacing:0.01em;" href="#pinned">Explore Portfolio</a>
-          <a class="btn btn--ghost" style="font-size:1.08rem;padding:13px 28px;font-weight:700;letter-spacing:0.01em;" href="#now-next">Investment Focus</a>
+
+        <div class="hero__cta">
+          <a class="btn" href="#pinned">Explore Portfolio</a>
+          <a class="btn btn--ghost" href="#now-next">Investment Focus</a>
         </div>
-        <div style="margin-bottom:18px;">
-          <span style="font-size:1.08rem;color:var(--muted);font-style:italic;">Durable systems, ethical growth, and real-world impact.</span>
-        </div>
-        <div style="margin-bottom:10px;">
+
+        <p class="hero__note muted">Durable systems, ethical growth, and real-world impact.</p>
+
+        <div class="hero__social">
           {% include social-icons.html %}
         </div>
       </div>
-      <div class="hero__panel" aria-label="Credibility & Highlights" style="background:linear-gradient(120deg,#fff 0%,#e9eef7 100%);border-radius:18px;box-shadow:0 8px 32px #7aa2ff11;padding:32px 28px 28px 28px;min-width:320px;max-width:400px;">
-        <div class="hero__panelTitle" style="font-size:1.13rem;font-weight:700;margin-bottom:16px;letter-spacing:0.01em;">Why Invest Here?</div>
-        <ul class="hero__panelList" role="list" style="gap:18px;font-size:1.04rem;line-height:1.7;">
-          <li><span class="muted">Track Record</span><span>Proven execution in construction, systems, and stewardship</span></li>
-          <li><span class="muted">Transparency</span><span>Open documentation, clear principles, and public accountability</span></li>
-          <li><span class="muted">Growth</span><span>Scalable, ethical, and sustainable outcomes</span></li>
-          <li><span class="muted">Alignment</span><span>Seeking values-aligned partners for long-term impact</span></li>
+
+      <!-- Right panel -->
+      <aside class="hero__panel" aria-label="Credibility & Highlights">
+        <div class="hero__panelTitle">Why Invest Here?</div>
+
+        <ul class="hero__panelList" role="list">
+          <li>
+            <span class="muted">Track Record</span>
+            <span>Proven execution in construction, systems, and stewardship</span>
+          </li>
+          <li>
+            <span class="muted">Transparency</span>
+            <span>Open documentation, clear principles, and public accountability</span>
+          </li>
+          <li>
+            <span class="muted">Growth</span>
+            <span>Scalable, ethical, and sustainable outcomes</span>
+          </li>
+          <li>
+            <span class="muted">Alignment</span>
+            <span>Seeking values-aligned partners for long-term impact</span>
+          </li>
         </ul>
-        <p class="muted hero__panelNote" style="margin-top:22px;font-size:1.01rem;">
+
+        <p class="hero__panelNote muted">
           <strong>Ready to collaborate?</strong> Explore the portfolio or connect for a private discussion.
         </p>
-      </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -51,7 +76,7 @@ layout: default
     <p class="section__blurb">Primary destinations and active public work.</p>
   </div>
 
-  <div class="grid">
+  <div class="grid {% if pinned_count == 4 %}grid--pinned-4{% endif %}">
     {% for item in links.pinned %}
       {% include link-card.html item=item %}
     {% endfor %}
@@ -74,7 +99,9 @@ layout: default
 <section class="container" id="now-next">
   <div class="section__head">
     <h2 class="section__title">Now / Next / Looking For</h2>
-    <p class="section__blurb">Investor-friendly context in plain language. Edit anytime in <code>/_data/profile.yml</code>.</p>
+    <p class="section__blurb">
+      Investor-friendly context in plain language. Edit anytime in <code>/_data/profile.yml</code>.
+    </p>
   </div>
 
   {% assign nnl = profile.now_next_looking %}
@@ -82,19 +109,33 @@ layout: default
     <div class="panel">
       <h3>Now</h3>
       <ul>
-        {% for x in nnl.now %}<li>{{ x }}</li>{% endfor %}
+        {% if nnl and nnl.now %}
+          {% for x in nnl.now %}<li>{{ x }}</li>{% endfor %}
+        {% else %}
+          <li class="muted">Add items under <code>now_next_looking.now</code> in <code>/_data/profile.yml</code>.</li>
+        {% endif %}
       </ul>
     </div>
+
     <div class="panel">
       <h3>Next</h3>
       <ul>
-        {% for x in nnl.next %}<li>{{ x }}</li>{% endfor %}
+        {% if nnl and nnl.next %}
+          {% for x in nnl.next %}<li>{{ x }}</li>{% endfor %}
+        {% else %}
+          <li class="muted">Add items under <code>now_next_looking.next</code> in <code>/_data/profile.yml</code>.</li>
+        {% endif %}
       </ul>
     </div>
+
     <div class="panel">
       <h3>Looking For</h3>
       <ul>
-        {% for x in nnl.looking_for %}<li>{{ x }}</li>{% endfor %}
+        {% if nnl and nnl.looking_for %}
+          {% for x in nnl.looking_for %}<li>{{ x }}</li>{% endfor %}
+        {% else %}
+          <li class="muted">Add items under <code>now_next_looking.looking_for</code> in <code>/_data/profile.yml</code>.</li>
+        {% endif %}
       </ul>
     </div>
   </div>
