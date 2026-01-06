@@ -467,3 +467,53 @@ code {
     background: linear-gradient(180deg, rgba(2,6,23,0.03), rgba(2,6,23,0.01)), var(--panel);
   }
 }
+
+/* Tooltip */
+.iconbtn {
+  position: relative;
+}
+
+.iconbtn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 0.8rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  box-shadow: var(--shadow);
+  z-index: 20;
+}
+
+.iconbtn:hover::after,
+.iconbtn:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Primary icons = slightly larger + stronger */
+.iconbtn.is-primary {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+}
+
+.iconbtn.is-primary svg {
+  transform: scale(1.05);
+}
+
+/* Secondary icons = calmer */
+.iconbtn:not(.is-primary) {
+  opacity: 0.85;
+}
+
+.iconbtn:not(.is-primary):hover {
+  opacity: 1;
+}
