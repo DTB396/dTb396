@@ -44,28 +44,25 @@ permalink: /about/
       <li><strong>No private leakage:</strong> No publication of private repo contents or sensitive materials.</li>
       <li><strong>No inflammatory framing:</strong> Neutral language, verifiable facts only.</li>
     </ul>
+<h2 class="section__title">Contact</h2>
 
-    <h2 class="section__title">Contact</h2>
+<div class="contact-cards">
+  <a class="contact-card" href="mailto:dTb33@ProtonMail.com">
+    <span class="contact-card__label">Email</span>
+    <span class="contact-card__value">dTb33@ProtonMail.com</span>
+  </a>
+  <a class="contact-card" href="mailto:dTb33@pm.me">
+    <span class="contact-card__label">Email (short)</span>
+    <span class="contact-card__value">dTb33@pm.me</span>
+  </a>
+  <a class="contact-card" href="mailto:info@Tillerstead.com">
+    <span class="contact-card__label">Business</span>
+    <span class="contact-card__value">info@Tillerstead.com</span>
+  </a>
+</div>
 
-    <div class="contact-cards">
-      <a class="contact-card" href="mailto:dTb33@ProtonMail.com">
-        <span class="contact-card__label">Email</span>
-        <span class="contact-card__value">dTb33@ProtonMail.com</span>
-      </a>
-
-      <a class="contact-card" href="mailto:dTb33@pm.me">
-        <span class="contact-card__label">Email (short)</span>
-        <span class="contact-card__value">dTb33@pm.me</span>
-      </a>
-
-      <a class="contact-card" href="mailto:info@Tillerstead.com">
-        <span class="contact-card__label">Business</span>
-        <span class="contact-card__value">info@Tillerstead.com</span>
-      </a>
-    </div>
-
-    <div class="contact-icons">
-      {% include social-icons.html %}
-    </div>
+<div class="contact-icons">
+  {% include social-icons.html %}
+</div>
   </div>
 </section>
