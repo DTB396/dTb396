@@ -1,0 +1,26 @@
+name: "Devon Tyler"
+handle: "DTB396"
+descriptor: "Builder • Systems-minded operator • Product + field execution"
+location: "Galloway Township, Atlantic County, New Jersey, USA"
+
+# Do not fabricate usernames. Leave blank until you add them.
+social:
+  github: "https://github.com/DTB396"
+  email: ""
+  linkedin: ""
+  x: ""
+  youtube: ""
+  instagram: ""
+  website: ""
+
+# Investor-friendly section (edit anytime)
+now_next_looking:
+  now:
+    - "Shipping practical tools and field-ready systems."
+    - "Maintaining and iterating on active public projects."
+  next:
+    - "[Placeholder] A focused build in automation / operations."
+    - "[Placeholder] Additional public demos and documentation."
+  looking_for:
+    - "[Placeholder] Strategic introductions and aligned collaborators."
+    - "[Placeholder] Early user feedback on tools-in-development."

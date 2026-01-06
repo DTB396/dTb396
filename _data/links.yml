@@ -1,0 +1,85 @@
+# Single source of truth for links + sections.
+# Add new cards by copying an item and editing fields.
+# Fields:
+# - title (required)
+# - url (required)
+# - description (recommended)
+# - tags (optional list)
+# - status (optional): active | in_development | archived
+# - featured (optional boolean)
+
+# ---------------------------
+# TEMPLATE: Add a pinned link
+# ---------------------------
+# Add a new item under pinned::
+# - title: "Example"
+#   url: "https://example.com/"
+#   description: "One-line description."
+#   tags: ["Tools"]
+#   status: active
+#   featured: true
+#
+# ------------------------------
+# TEMPLATE: Add a link to a section
+# ------------------------------
+# Find the section under sections: and add items under items::
+# sections:
+#   - id: "tools"
+#     title: "Tools"
+#     blurb: "Small utilities, demos, and public repos."
+#     items:
+#       - title: "My Tool"
+#         url: "https://example.com/tool"
+#         description: "What it does."
+#         tags: ["CLI", "Demo"]
+#         status: in_development
+
+pinned:
+  - title: "Tillerstead"
+    url: "https://tillerstead.com/"
+    description: "Commercial/Residential construction, expert compliant tile installations, and custom property maintenance service plans."
+    tags: ["Business"]
+    status: active
+    featured: true
+
+  - title: "Faith Frontier"
+    url: "https://faithfrontier.org/"
+    description: "Faith-based stewardship and community accountability."
+    tags: ["Mission"]
+    status: active
+    featured: true
+
+  - title: "Barber Cam Preview"
+    url: "https://dtb396.github.io/barber-cam-preview/"
+    description: "Public demo preview site."
+    tags: ["Works"]
+    status: active
+    featured: true
+
+  - title: "GitHub Profile"
+    url: "https://github.com/DTB396"
+    description: "Open-source and public work."
+    tags: ["Tools"]
+    status: active
+    featured: true
+
+sections:
+  - id: "business"
+    title: "Business"
+    blurb: "Operational work, services, and commercial builds."
+    items: []
+
+  - id: "mission"
+    title: "Mission"
+    blurb: "Values-aligned initiatives and public-interest work."
+    items: []
+
+  - id: "tools"
+    title: "Tools"
+    blurb: "Small utilities, demos, and public repos."
+    items: []
+
+  - id: "ideas"
+    title: "Ideas (In Development)"
+    blurb: "Explorations and drafts. Not commitments—just what I’m testing."
+    items: []

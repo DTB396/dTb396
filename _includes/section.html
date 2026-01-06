@@ -1,0 +1,16 @@
+<section class="section" id="{{ include.section.id }}">
+  <div class="section__head">
+    <h2 class="section__title">{{ include.section.title }}</h2>
+    {% if include.section.blurb %}<p class="section__blurb">{{ include.section.blurb }}</p>{% endif %}
+  </div>
+
+  {% if include.section.items and include.section.items.size > 0 %}
+    <div class="grid">
+      {% for item in include.section.items %}
+        {% include link-card.html item=item %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="muted">No items listed yet. Add entries in <code>/_data/links.yml</code>.</p>
+  {% endif %}
+</section>

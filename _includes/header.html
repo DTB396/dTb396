@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="container header__inner">
+    <div class="brand">
+      <a class="brand__link" href="{{ "/" | relative_url }}">
+        <span class="brand__name">{{ site.data.profile.name }}</span>
+        <span class="brand__meta">{{ site.data.profile.location }}</span>
+      </a>
+    </div>
+
+    {% assign s = site.data.profile.social %}
+    {% assign current = page.url %}
+
+    <nav class="nav" aria-label="Primary">
+      <a
+        href="{{ "/" | relative_url }}"
+        class="{% if current == '/' %}is-active{% endif %}"
+      >Home</a>
+
+      <a
+        href="{{ "/projects/" | relative_url }}"
+        class="{% if current == '/projects/' %}is-active{% endif %}"
+      >Projects</a>
+
+      <a
+        href="{{ "/about/" | relative_url }}"
+        class="{% if current == '/about/' %}is-active{% endif %}"
+      >About</a>
+
+      {% if s.github and s.github != "" %}
+        <a href="{{ s.github }}">GitHub</a>
+      {% endif %}
+
+      <a href="#site-footer">Contact</a>
+    </nav>
+  </div>
+</header>

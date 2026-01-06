@@ -1,0 +1,30 @@
+title: "Devon Tyler — Public Hub"
+description: "A calm, professional portfolio hub for active projects, works, tools, and ideas."
+url: "https://dtb396.github.io"
+baseurl: ""
+
+# Social image
+og_image: "/assets/img/og-card.svg"
+
+# Build
+markdown: kramdown
+theme: null
+plugins: []
+
+# Keep build simple and fast
+exclude:
+  - README.md
+  - LICENSE
+  - SECURITY.md
+  - CODE_OF_CONDUCT.md
+  - .github
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
+# Defaults for SEO-ish consistency
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

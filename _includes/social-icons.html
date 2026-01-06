@@ -1,0 +1,45 @@
+{% assign s = site.data.profile.social %}
+
+<div class="social" aria-label="Social links">
+  {% if s.github and s.github != "" %}
+    <a class="iconbtn" href="{{ s.github }}" aria-label="GitHub">
+      {% include svg/github.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.email and s.email != "" %}
+    <a class="iconbtn" href="mailto:{{ s.email | escape }}" aria-label="Email">
+      {% include svg/mail.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.linkedin and s.linkedin != "" %}
+    <a class="iconbtn" href="{{ s.linkedin }}" aria-label="LinkedIn">
+      {% include svg/linkedin.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.x and s.x != "" %}
+    <a class="iconbtn" href="{{ s.x }}" aria-label="X">
+      {% include svg/x.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.youtube and s.youtube != "" %}
+    <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube">
+      {% include svg/youtube.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.instagram and s.instagram != "" %}
+    <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram">
+      {% include svg/instagram.svg %}
+    </a>
+  {% endif %}
+
+  {% if s.website and s.website != "" %}
+    <a class="iconbtn" href="{{ s.website }}" aria-label="Website">
+      {% include svg/link.svg %}
+    </a>
+  {% endif %}
+</div>

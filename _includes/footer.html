@@ -1,0 +1,64 @@
+<footer class="footer" id="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <!-- Contact -->
+      <div>
+        <div class="footer__title">Contact</div>
+
+        {% include social-icons.html %}
+
+        {% assign s = site.data.profile.social %}
+        <ul class="footer__list" role="list">
+          {% if s.github and s.github != "" %}<li><a href="{{ s.github }}">GitHub</a></li>{% endif %}
+          {% if s.email and s.email != "" %}<li><a href="mailto:{{ s.email | escape }}">Email</a></li>{% endif %}
+          {% if s.linkedin and s.linkedin != "" %}<li><a href="{{ s.linkedin }}">LinkedIn</a></li>{% endif %}
+          {% if s.x and s.x != "" %}<li><a href="{{ s.x }}">X</a></li>{% endif %}
+          {% if s.youtube and s.youtube != "" %}<li><a href="{{ s.youtube }}">YouTube</a></li>{% endif %}
+          {% if s.instagram and s.instagram != "" %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
+          {% if s.website and s.website != "" %}<li><a href="{{ s.website }}">Website</a></li>{% endif %}
+        </ul>
+
+        <div class="footer__title" style="margin-top:14px;">Pages</div>
+        <ul class="footer__list" role="list">
+          <li><a href="{{ "/" | relative_url }}">Home</a></li>
+          <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
+          <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+        </ul>
+      </div>
+
+      <!-- IP / Trademark -->
+      <div>
+        <div class="footer__title">IP + trademark</div>
+        <p class="muted">
+          Unless otherwise noted, site text and design are © {{ site.time | date: "%Y" }} {{ site.data.profile.name }}.
+          Project names, logos, and third-party marks are the property of their respective owners.
+          Nothing here grants rights to third-party marks.
+        </p>
+
+        <div class="footer__title" style="margin-top:14px;">Repository</div>
+        <p class="muted">
+          Source is published on GitHub under the license in this repository. Linked projects may have separate licenses.
+        </p>
+      </div>
+
+      <!-- Privacy -->
+      <div>
+        <div class="footer__title">Privacy</div>
+        <p class="muted">
+          This is a static GitHub Pages site. It does not intentionally collect personal data, run ads,
+          or embed tracking pixels. Standard hosting logs may be processed by GitHub for delivery and security.
+        </p>
+
+        <div class="footer__title" style="margin-top:14px;">Use</div>
+        <p class="muted">
+          Links are provided for reference. Descriptions are informational and may change as projects evolve.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <span>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} • {{ site.data.profile.location }}</span>
+      <span class="muted">Fast, static, and easy to maintain.</span>
+    </div>
+  </div>
+</footer>

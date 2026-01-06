@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+{% assign profile = site.data.profile %}
+{% assign links = site.data.links %}
+
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <h1 class="hero__title">{{ profile.name }}</h1>
+        <p class="hero__subtitle">{{ profile.descriptor }}</p>
+        <p class="hero__location">{{ profile.location }}</p>
+
+        <div class="hero__cta">
+          <a class="btn" href="#pinned">View pinned links</a>
+          <a class="btn btn--ghost" href="#now-next">Now / Next / Looking For</a>
+        </div>
+      </div>
+
+	{% include social-icons.html %}
+
+      <div class="hero__panel" aria-label="Quick facts">
+        <div class="hero__panelTitle">Quick</div>
+        <ul class="hero__panelList" role="list">
+          <li><span class="muted">Focus</span><span>Execution, clarity, and durable systems</span></li>
+          <li><span class="muted">Home base</span><span>{{ profile.location }}</span></li>
+          <li><span class="muted">Public work</span><span><a href="{{ profile.social.github }}">GitHub</a></span></li>
+        </ul>
+        <p class="muted hero__panelNote">
+          This is a public hub for links and lightweight context. It does not publish private repo content, filings, or evidence materials.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="pinned">
+  <div class="section__head">
+    <h2 class="section__title">Pinned</h2>
+    <p class="section__blurb">Primary destinations and active public work.</p>
+  </div>
+
+  <div class="grid">
+    {% for item in links.pinned %}
+      {% include link-card.html item=item %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container" id="sections">
+  <div class="section__head">
+    <h2 class="section__title">Projects</h2>
+    <p class="section__blurb">Organized for clarity. Easy to expand.</p>
+  </div>
+
+  <div class="stack">
+    {% for s in links.sections %}
+      {% include section.html section=s %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container" id="now-next">
+  <div class="section__head">
+    <h2 class="section__title">Now / Next / Looking For</h2>
+    <p class="section__blurb">Investor-friendly context in plain language. Edit anytime in <code>/_data/profile.yml</code>.</p>
+  </div>
+
+  {% assign nnl = profile.now_next_looking %}
+  <div class="nnl">
+    <div class="panel">
+      <h3>Now</h3>
+      <ul>
+        {% for x in nnl.now %}<li>{{ x }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Next</h3>
+      <ul>
+        {% for x in nnl.next %}<li>{{ x }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Looking For</h3>
+      <ul>
+        {% for x in nnl.looking_for %}<li>{{ x }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="notes">
+  <div class="section__head">
+    <h2 class="section__title">Notes</h2>
+    <p class="section__blurb">Ground rules and expectations.</p>
+  </div>
+
+  <div class="panel">
+    <ul>
+      <li><strong>Separation by design:</strong> This hub presents distinct categories (Business / Mission / Tools / Ideas) without blending claims across domains.</li>
+      <li><strong>Privacy-forward:</strong> No tracking pixels, no ad tech, and no publication of private repositories or evidence assets.</li>
+      <li><strong>Calm civics language:</strong> This site avoids inflammatory framing and sticks to factual descriptions.</li>
+    </ul>
+  </div>
+</section>
