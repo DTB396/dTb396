@@ -14,35 +14,27 @@
 # - notes (optional): short, neutral disclaimer/context
 
 pinned:
-  - title: "Tillerstead"
+  - title: "Tillerstead LLC"
     url: "https://tillerstead.com/"
-    description: "Commercial/residential construction with a focus on compliant tile work, remodel support, and property maintenance plans."
-    detail: "Tillerstead is the public front for field work: tile/stone installations, repair/refresh scopes, small builds, and recurring maintenance. This hub will evolve as services and portfolio items are published."
-    tags: ["Business", "Construction", "Tile", "Property Maintenance"]
+    description: "Construction services with emphasis on compliant tile work, remodel support, and property maintenance."
+    detail: "Public hub for field work: tile/stone installations, repair/refresh scopes, small builds, and recurring maintenance. Content expands as services and portfolio items are published."
+    tags: ["Business", "Construction", "Tile", "Maintenance"]
     status: active
     featured: true
 
   - title: "Faith Frontier"
     url: "https://faithfrontier.org/"
-    description: "Faith-based stewardship and community accountability with a commitment to transparent, principle-driven publishing."
-    detail: "Faith Frontier is a mission-aligned public site for governance, records, and long-form documentation. It’s designed to be readable by the public and easy to audit over time."
+    description: "Mission-aligned publishing focused on stewardship, accountability, and transparent documentation."
+    detail: "Public site for governance materials, records, and long-form documentation. Designed for readability and auditability over time."
     tags: ["Mission", "Governance", "Public Record"]
     status: active
     featured: true
 
-  - title: "Barber Cam Preview"
+  - title: "Barber Cam (Preview)"
     url: "https://dtb396.github.io/barber-cam-preview/"
-    description: "Public demo preview site for the Barber Cam concept and UI/UX experiments."
-    detail: "A lightweight preview environment used to demo workflows and visuals. Public content only—no private repo material or sensitive data."
-    tags: ["Tools", "Demo", "UI"]
-    status: active
-    featured: true
-
-  - title: "GitHub Profile"
-    url: "https://github.com/DTB396"
-    description: "Primary index of public repositories, experiments, and published source."
-    detail: "This is where code lives when it’s ready to be public. Individual repos may have separate licenses and maturity levels."
-    tags: ["Tools", "Source"]
+    description: "Public preview site for Barber Cam UI/UX experiments and demos."
+    detail: "Lightweight preview environment for visuals and workflows. Public content only; excludes private repository material and sensitive data."
+    tags: ["Tools", "Demo", "UI/UX"]
     status: active
     featured: true
 
@@ -53,79 +45,34 @@ sections:
     items:
       - title: "Tillerstead — Main Site"
         url: "https://tillerstead.com/"
-        description: "Public home for services, scope guidance, and portfolio publishing (as available)."
-        detail: "Focus: compliant installs, durable finishes, and clear expectations. Over time, this will include process notes, photo sets, and job-type explainers (not client-sensitive details)."
+        description: "Services, scope guidance, and portfolio publishing (as available)."
+        detail: "Focus: compliant installs, durable finishes, and clear expectations. Over time, this may include process notes, photo sets, and job-type explainers (without client-sensitive details)."
         tags: ["Website", "Services", "Portfolio"]
         status: active
 
-      - title: "Client-ready documentation (templates)"
-        url: "https://tillerstead.com/"
-        description: "Plain-language documentation patterns for estimates, scopes, and change control."
-        detail: "Project goal is to keep paperwork simple and auditable: what’s included, what’s excluded, and how variations are handled."
+      - title: "Tillerstead — Build Phase Documents"
+        url: "https://tillerstead.com/build/"
+        description: "Plain-language patterns for estimates, scopes, and change control."
+        detail: "Goal: keep paperwork simple and auditable—what’s included, what’s excluded, and how changes are handled."
         tags: ["Process", "Documentation"]
         status: in_development
-        notes: "Links may be consolidated under the main site until published."
+        notes: "May be consolidated under the main site until fully published."
 
   - id: "mission"
     title: "Mission"
-    blurb: "Values-aligned initiatives and public-interest work."
+    blurb: "Values-aligned initiatives and public-interest documentation."
     items:
       - title: "Faith Frontier — Governance + Records"
         url: "https://faithfrontier.org/"
-        description: "Framework for stewardship, accountability, and consistent publishing standards."
-        detail: "Designed to separate belief/mission from operational claims: clear labels, dated notes, and a bias toward primary sources."
+        description: "Governance framework and publishing standards for stewardship and accountability."
+        detail: "Bias toward primary sources and clear labeling of dates, scope, and intent. Separates mission statements from operational claims."
         tags: ["Governance", "Ethics", "Publishing"]
         status: active
 
-      - title: "Case record pages (public transparency)"
-        url: "https://faithfrontier.org/"
-        description: "Public-facing case pages with structured records and attachments when appropriate."
-        detail: "Where filings and exhibits are published only when intended for public release. Goal: easy navigation, consistent naming, and clear disclaimers."
+      - title: "Faith Frontier — Case Record Pages"
+        url: "https://faithfrontier.org/cases/"
+        description: "Structured case pages with attachments when appropriate for public release."
+        detail: "Publish filings and exhibits only when intended for public access. Emphasis on navigation, consistent naming, and clear disclaimers."
         tags: ["Public Record", "Documentation"]
         status: in_development
-        notes: "Only publish what you can legally and ethically publish."
-
-  - id: "tools"
-    title: "Tools"
-    blurb: "Utilities, demos, and code that reduces friction in real workflows."
-    items:
-      - title: "Barber Cam — Preview Demo"
-        url: "https://dtb396.github.io/barber-cam-preview/"
-        description: "Public UI/UX preview for a media intake + organization workflow."
-        detail: "A demo surface for layouts, navigation, and basic interactions. Intended as a safe public slice of a larger toolchain."
-        tags: ["Demo", "Static Site", "Workflow"]
-        status: active
-        demo: "https://dtb396.github.io/barber-cam-preview/"
-
-      - title: "DTB396 Public Hub (this site)"
-        url: "https://dtb396.github.io/dTb396/"
-        description: "A minimal, durable GitHub Pages portfolio: projects, principles, and contact."
-        detail: "Built to stay fast and maintainable: static pages, simple data files, and clean component structure."
-        tags: ["Jekyll", "GitHub Pages", "Portfolio"]
-        status: active
-
-      - title: "GitHub — Public Repos"
-        url: "https://github.com/DTB396"
-        description: "Source code and public experiments. Each repo documents its own scope and license."
-        detail: "If something is early, it’s labeled that way. If something is mature, it gets a tighter README and changelog."
-        tags: ["Source", "Open Work"]
-        status: active
-
-  - id: "ideas"
-    title: "Ideas (In Development)"
-    blurb: "Explorations and drafts. Not commitments—just what I’m testing."
-    items:
-      - title: "BWC / Dashcam discovery intake workflow"
-        url: "https://dtb396.github.io/barber-cam-preview/"
-        description: "Exploring a clean pipeline for organizing large media drops for review and disclosure."
-        detail: "Focus areas: folder normalization, metadata extraction, redaction-aware handling, and human-review friendly outputs."
-        tags: ["Media", "Automation", "Pipeline"]
-        status: in_development
-        notes: "Demo only; avoid publishing sensitive materials."
-
-      - title: "Public documentation standards"
-        url: "https://dtb396.github.io/dTb396/about/"
-        description: "Consistent rules for tone, sourcing, and separating facts from opinions."
-        detail: "Aiming for verifiable language, dated updates, and audit-friendly structure across projects."
-        tags: ["Writing", "Governance", "Standards"]
-        status: in_development
+        notes: "Publish only what you can legally and ethically publish."
