@@ -1,7 +1,7 @@
 title: "Devon Tyler — Public Hub"
 description: "A calm, professional portfolio hub for active projects, works, tools, and ideas."
 url: "https://dtb396.github.io"
-baseurl: ""
+baseurl: "/dTb396"
 
 # Social image
 og_image: "/assets/img/og-card.svg"
@@ -28,3 +28,4 @@ defaults:
       path: ""
     values:
       layout: "default"
+
