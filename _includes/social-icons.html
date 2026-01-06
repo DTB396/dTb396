@@ -1,76 +1,66 @@
 {% assign s = site.data.profile.social %}
+{% assign sites = site.data.profile.websites %}
 
 <div class="social" aria-label="Social links">
-  {% if s.github %}
-    <a class="iconbtn is-primary"
-       href="{{ s.github }}"
-       aria-label="GitHub"
-       data-tooltip="GitHub"
-       rel="me">
+  {%- comment -%} Primary identity anchors first {%- endcomment -%}
+  {% if s.github and s.github != "" %}
+    <a class="iconbtn is-primary" href="{{ s.github }}" aria-label="GitHub" data-tooltip="GitHub" rel="me noopener noreferrer">
       {% include svg/github.svg %}
     </a>
   {% endif %}
 
-  {% if s.linkedin %}
-    <a class="iconbtn is-primary"
-       href="{{ s.linkedin }}"
-       aria-label="LinkedIn"
-       data-tooltip="LinkedIn"
-       rel="me">
+  {% if s.linkedin and s.linkedin != "" %}
+    <a class="iconbtn is-primary" href="{{ s.linkedin }}" aria-label="LinkedIn" data-tooltip="LinkedIn" rel="me noopener noreferrer">
       {% include svg/linkedin.svg %}
     </a>
   {% endif %}
 
-  {% if s.x %}
-    <a class="iconbtn"
-       href="{{ s.x }}"
-       aria-label="X"
-       data-tooltip="X (Twitter)"
-       rel="me">
+  {%- comment -%} Websites (DTB396 primary, then others) {%- endcomment -%}
+  {% if sites %}
+    {% assign primary_sites = sites | where: "primary", true %}
+    {% assign secondary_sites = sites | where_exp: "item", "item.primary != true" %}
+
+    {% for site in primary_sites %}
+      <a class="iconbtn is-primary is-globe" href="{{ site.url }}" aria-label="{{ site.label }}" data-tooltip="{{ site.label }}" rel="noopener noreferrer">
+        {% include svg/link.svg %}
+      </a>
+    {% endfor %}
+
+    {% for site in secondary_sites %}
+      <a class="iconbtn is-globe" href="{{ site.url }}" aria-label="{{ site.label }}" data-tooltip="{{ site.label }}" rel="noopener noreferrer">
+        {% include svg/link.svg %}
+      </a>
+    {% endfor %}
+  {% endif %}
+
+  {%- comment -%} Social presence next {%- endcomment -%}
+  {% if s.x and s.x != "" %}
+    <a class="iconbtn" href="{{ s.x }}" aria-label="X (Twitter)" data-tooltip="X" rel="me noopener noreferrer">
       {% include svg/x.svg %}
     </a>
   {% endif %}
 
-  {% if s.instagram %}
-    <a class="iconbtn"
-       href="{{ s.instagram }}"
-       aria-label="Instagram"
-       data-tooltip="Instagram"
-       rel="me">
+  {% if s.instagram and s.instagram != "" %}
+    <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram" data-tooltip="Instagram" rel="me noopener noreferrer">
       {% include svg/instagram.svg %}
     </a>
   {% endif %}
 
-  {% if s.youtube %}
-    <a class="iconbtn"
-       href="{{ s.youtube }}"
-       aria-label="YouTube"
-       data-tooltip="YouTube"
-       rel="me">
+  {% if s.youtube and s.youtube != "" %}
+    <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube" data-tooltip="YouTube" rel="me noopener noreferrer">
       {% include svg/youtube.svg %}
     </a>
   {% endif %}
 
-  {% if s.snapchat %}
-    <a class="iconbtn"
-       href="{{ s.snapchat }}"
-       aria-label="Snapchat"
-       data-tooltip="Snapchat"
-       rel="me">
+  {% if s.snapchat and s.snapchat != "" %}
+    <a class="iconbtn" href="{{ s.snapchat }}" aria-label="Snapchat" data-tooltip="Snapchat" rel="me noopener noreferrer">
       {% include svg/snapchat.svg %}
     </a>
   {% endif %}
 
-{% assign sites = site.data.profile.websites %}
-
-{% if sites %}
-  {% for site in sites %}
-    <a class="iconbtn {% if site.primary %}is-primary{% endif %}"
-       href="{{ site.url }}"
-       aria-label="{{ site.label }}"
-       data-tooltip="{{ site.label }}">
-      {% include svg/link.svg %}
+  {% if s.email and s.email != "" %}
+    <a class="iconbtn" href="mailto:{{ s.email | escape }}" aria-label="Email" data-tooltip="Email">
+      {% include svg/mail.svg %}
     </a>
-  {% endfor %}
-{% endif %}
+  {% endif %}
 </div>
