@@ -1,4 +1,3 @@
-<script>
 (() => {
   const btn = document.querySelector('.navbtn');
   const drawer = document.querySelector('.navdrawer');
@@ -31,4 +30,3 @@
     if (e.key === 'Escape') close();
   });
 })();
-</script>
