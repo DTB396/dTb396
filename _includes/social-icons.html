@@ -2,7 +2,7 @@
 {% assign sites = site.data.profile.websites %}
 
 <div class="social" aria-label="Social links">
-  {%- comment -%} Primary identity anchors first {%- endcomment -%}
+  {%- comment -%} Primary identity anchors {%- endcomment -%}
   {% if s.github and s.github != "" %}
     <a class="iconbtn is-primary" href="{{ s.github }}" aria-label="GitHub" data-tooltip="GitHub" rel="me noopener noreferrer">
       {% include svg/github.svg %}
@@ -15,27 +15,32 @@
     </a>
   {% endif %}
 
-  {%- comment -%} Websites (DTB396 primary, then others) {%- endcomment -%}
+  {%- comment -%} Websites[] (DTB396 primary first). If websites[] exists, DO NOT also render s.website. {%- endcomment -%}
   {% if sites %}
     {% assign primary_sites = sites | where: "primary", true %}
     {% assign secondary_sites = sites | where_exp: "item", "item.primary != true" %}
 
     {% for site in primary_sites %}
       <a class="iconbtn is-primary is-globe" href="{{ site.url }}" aria-label="{{ site.label }}" data-tooltip="{{ site.label }}" rel="noopener noreferrer">
-        {% include svg/link.svg %}
+        {% include svg/globe.svg %}
       </a>
     {% endfor %}
 
     {% for site in secondary_sites %}
       <a class="iconbtn is-globe" href="{{ site.url }}" aria-label="{{ site.label }}" data-tooltip="{{ site.label }}" rel="noopener noreferrer">
-        {% include svg/link.svg %}
+        {% include svg/globe.svg %}
       </a>
     {% endfor %}
+
+  {% elsif s.website and s.website != "" %}
+    <a class="iconbtn is-primary is-globe" href="{{ s.website }}" aria-label="Website" data-tooltip="Website" rel="noopener noreferrer">
+      {% include svg/globe.svg %}
+    </a>
   {% endif %}
 
-  {%- comment -%} Social presence next {%- endcomment -%}
+  {%- comment -%} Social presence {%- endcomment -%}
   {% if s.x and s.x != "" %}
-    <a class="iconbtn" href="{{ s.x }}" aria-label="X (Twitter)" data-tooltip="X" rel="me noopener noreferrer">
+    <a class="iconbtn" href="{{ s.x }}" aria-label="X" data-tooltip="X" rel="me noopener noreferrer">
       {% include svg/x.svg %}
     </a>
   {% endif %}
