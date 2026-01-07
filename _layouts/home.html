@@ -2,16 +2,25 @@
 layout: default
 ---
 
-{% assign profile = site.data.profile %}
-{% assign links = site.data.links %}
-{% assign pinned_count = links.pinned | size %}
+{% assign profile = site.data.profile | default: {} %}
+{% assign links = site.data.links | default: {} %}
+
+{% assign pinned = links.pinned | default: empty %}
+{% assign pinned_count = pinned | size %}
+
+{% assign nnl = profile.now_next_looking | default: {} %}
+{% assign now_items = nnl.now | default: empty %}
+{% assign next_items = nnl.next | default: empty %}
+{% assign looking_items = nnl.looking_for | default: empty %}
 
 <section class="hero hero--clean" aria-label="Hero">
   <div class="container">
     <div class="hero__grid">
       <!-- Left -->
       <div class="hero__copy">
-        <h1 class="hero__title">{{ profile.name }}</h1>
+        <h1 class="hero__title">
+          {{ profile.name | default: site.title | default: "Portfolio" }}
+        </h1>
 
         {% if profile.descriptor %}
           <p class="hero__subtitle">{{ profile.descriptor }}</p>
@@ -28,13 +37,13 @@ layout: default
         </div>
 
         <div class="hero__cta">
-          <a class="btn" href="#pinned">Explore Portfolio</a>
-          <a class="btn btn--ghost" href="#now-next">Investment Focus</a>
+          <a class="btn" href="#pinned">Explore Projects</a>
+          <a class="btn btn--ghost" href="#now-next">Now / Next</a>
         </div>
 
         <p class="hero__note muted">Durable systems, ethical growth, and real-world impact.</p>
 
-        <div class="hero__social">
+        <div class="hero__social" aria-label="Social links">
           {% include social-icons.html %}
         </div>
       </div>
@@ -72,28 +81,23 @@ layout: default
 
 <section class="container" id="pinned">
   <div class="section__head">
-    <h2 class="section__title">Pinned</h2>
-    <p class="section__blurb">Primary destinations and active public work.</p>
-  </div>
-
-  <div class="grid {% if pinned_count == 4 %}grid--pinned-4{% endif %}">
-    {% for item in links.pinned %}
-      {% include link-card.html item=item %}
-    {% endfor %}
-  </div>
-</section>
-
-<section class="container" id="sections">
-  <div class="section__head">
     <h2 class="section__title">Projects</h2>
-    <p class="section__blurb">Organized for clarity. Easy to expand.</p>
+    <p class="section__blurb">Active public work.</p>
   </div>
 
-  <div class="stack">
-    {% for s in links.sections %}
-      {% include section.html section=s %}
-    {% endfor %}
-  </div>
+  {% if pinned_count > 0 %}
+    <div class="grid {% if pinned_count == 4 %}grid--pinned-4{% endif %}">
+      {% for item in pinned %}
+        {% include link-card.html item=item %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="panel">
+      <p class="muted">
+        No pinned projects yet. Add items under <code>pinned:</code> in <code>/_data/links.yml</code>.
+      </p>
+    </div>
+  {% endif %}
 </section>
 
 <section class="container" id="now-next">
@@ -101,15 +105,14 @@ layout: default
     <h2 class="section__title">Now / Next / Looking For</h2>
             </div>
 
-  {% assign nnl = profile.now_next_looking %}
   <div class="nnl">
     <div class="panel">
       <h3>Now</h3>
       <ul>
-        {% if nnl and nnl.now %}
-          {% for x in nnl.now %}<li>{{ x }}</li>{% endfor %}
+        {% if now_items and now_items.size > 0 %}
+          {% for x in now_items %}<li>{{ x }}</li>{% endfor %}
         {% else %}
-          <li class="muted">Add items under <code>now_next_looking.now</code> in <code>/_data/profile.yml</code>.</li>
+          <li class="muted">Add items under <code>now_next_looking.now</code>.</li>
         {% endif %}
       </ul>
     </div>
@@ -117,10 +120,10 @@ layout: default
     <div class="panel">
       <h3>Next</h3>
       <ul>
-        {% if nnl and nnl.next %}
-          {% for x in nnl.next %}<li>{{ x }}</li>{% endfor %}
+        {% if next_items and next_items.size > 0 %}
+          {% for x in next_items %}<li>{{ x }}</li>{% endfor %}
         {% else %}
-          <li class="muted">Add items under <code>now_next_looking.next</code> in <code>/_data/profile.yml</code>.</li>
+          <li class="muted">Add items under <code>now_next_looking.next</code>.</li>
         {% endif %}
       </ul>
     </div>
@@ -128,10 +131,10 @@ layout: default
     <div class="panel">
       <h3>Looking For</h3>
       <ul>
-        {% if nnl and nnl.looking_for %}
-          {% for x in nnl.looking_for %}<li>{{ x }}</li>{% endfor %}
+        {% if looking_items and looking_items.size > 0 %}
+          {% for x in looking_items %}<li>{{ x }}</li>{% endfor %}
         {% else %}
-          <li class="muted">Add items under <code>now_next_looking.looking_for</code> in <code>/_data/profile.yml</code>.</li>
+          <li class="muted">Add items under <code>now_next_looking.looking_for</code>.</li>
         {% endif %}
       </ul>
     </div>
@@ -140,8 +143,8 @@ layout: default
 
 <section class="container" id="notes">
   <div class="section__head">
-    <h2 class="section__title">Notes</h2>
-    <p class="section__blurb">Ground rules and expectations.</p>
+    <h2 class="section__title">Terms</h2>
+    <p class="section__blurb">Project rules and expectations.</p>
   </div>
 
   <div class="panel">
