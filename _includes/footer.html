@@ -1,65 +1,74 @@
 <footer class="footer" id="site-footer">
   <div class="container">
+
     <div class="footer__grid">
+
       <!-- Contact -->
-      <div class="footer__col">
-        <div class="footer__title">Contact</div>
+      <section class="footer__col" aria-labelledby="footer-contact">
+        <h2 class="footer__title" id="footer-contact">Contact</h2>
 
         <div class="footer__icons">
           {% include social-icons.html %}
         </div>
 
         {% assign s = site.data.profile.social %}
-        <ul class="footer__list" role="list">
-          {% if s.github and s.github != "" %}<li><a href="{{ s.github }}">GitHub</a></li>{% endif %}
-          {% if s.email and s.email != "" %}<li><a href="mailto:{{ s.email | escape }}">Email</a></li>{% endif %}
-          {% if s.linkedin and s.linkedin != "" %}<li><a href="{{ s.linkedin }}">LinkedIn</a></li>{% endif %}
-          {% if s.x and s.x != "" %}<li><a href="{{ s.x }}">X</a></li>{% endif %}
-          {% if s.youtube and s.youtube != "" %}<li><a href="{{ s.youtube }}">YouTube</a></li>{% endif %}
-          {% if s.instagram and s.instagram != "" %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
-              </ul>
+        <nav aria-label="Social links">
+          <ul class="footer__list" role="list">
+            {% if s.github %}<li><a href="{{ s.github }}">GitHub</a></li>{% endif %}
+            {% if s.email %}<li><a href="mailto:{{ s.email | escape }}">Email</a></li>{% endif %}
+            {% if s.linkedin %}<li><a href="{{ s.linkedin }}">LinkedIn</a></li>{% endif %}
+            {% if s.x %}<li><a href="{{ s.x }}">X</a></li>{% endif %}
+            {% if s.youtube %}<li><a href="{{ s.youtube }}">YouTube</a></li>{% endif %}
+            {% if s.instagram %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
+          </ul>
+        </nav>
 
-        <div class="footer__title footer__title--spaced">Pages</div>
-        <ul class="footer__list" role="list">
-          <li><a href="{{ "/" | relative_url }}">Home</a></li>
-          <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
-          <li><a href="{{ "/about/" | relative_url }}">About</a></li>
-        </ul>
-      </div>
+        <h3 class="footer__title footer__title--spaced">Pages</h3>
+        <nav aria-label="Footer pages">
+          <ul class="footer__list" role="list">
+            <li><a href="{{ "/" | relative_url }}">Home</a></li>
+            <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
+            <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+          </ul>
+        </nav>
+      </section>
 
       <!-- IP / Trademark -->
-      <div class="footer__col">
-        <div class="footer__title">IP + trademark</div>
+      <section class="footer__col" aria-labelledby="footer-ip">
+        <h2 class="footer__title" id="footer-ip">IP + trademark</h2>
         <p class="muted footer__text">
           Unless otherwise noted, site text and design are © {{ site.time | date: "%Y" }} {{ site.data.profile.name }}.
           Project names, logos, and third-party marks are the property of their respective owners.
           Nothing here grants rights to third-party marks.
         </p>
 
-        <div class="footer__title footer__title--spaced">Repository</div>
+        <h3 class="footer__title footer__title--spaced">Repository</h3>
         <p class="muted footer__text">
-          Source is published on GitHub under the license in this repository. Linked projects may have separate licenses.
+          Source is published on GitHub under the license in this repository.
+          Linked projects may have separate licenses.
         </p>
-      </div>
+      </section>
 
       <!-- Privacy -->
-      <div class="footer__col">
-        <div class="footer__title">Privacy</div>
+      <section class="footer__col" aria-labelledby="footer-privacy">
+        <h2 class="footer__title" id="footer-privacy">Privacy</h2>
         <p class="muted footer__text">
-          This is a static GitHub Pages site. It does not intentionally collect personal data, run ads, or embed tracking pixels.
-          Standard hosting logs may be processed by GitHub for delivery and security.
+          This is a static GitHub Pages site. It does not intentionally collect personal data,
+          run ads, or embed tracking pixels. Standard hosting logs may be processed by GitHub.
         </p>
 
-        <div class="footer__title footer__title--spaced">Use</div>
+        <h3 class="footer__title footer__title--spaced">Use</h3>
         <p class="muted footer__text">
-          Links are provided for reference. Descriptions are informational and may change as projects evolve.
+          Links are provided for reference. Descriptions are informational and may change.
         </p>
-      </div>
+      </section>
+
     </div>
 
     <div class="footer__bar">
       <span>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} • {{ site.data.profile.location }}</span>
       <span class="muted">Fast, static, and easy to maintain.</span>
     </div>
+
   </div>
 </footer>
