@@ -1,16 +1,40 @@
-# Core identity (used across hero, footer, metadata)
-name: "Devon Tyler"
-handle: "DTB396"
-descriptor: "Builder • systems-minded operator • product + field execution"
-location: "Galloway Township, Atlantic County, New Jersey, USA"
+# identity.yml — public profile / link hub metadata
+# Optimized for: clarity, credibility, collaboration, and monetization readiness.
 
-# Short bio text (useful for meta tags and “link in bio” context)
+identity:
+  legal_name: "Devon Tyler Barber"
+  display_name: "Devon Barber"
+  handle: "DTB396"
+  headline: "Builder · Systems Operator · Field-to-Product Execution"
+  descriptor: "I build durable systems, ship practical tools, and document real-world execution—from job sites to code."
+  location:
+    city: "Galloway Township"
+    county: "Atlantic County"
+    state: "New Jersey"
+    country: "USA"
+
 bio:
-  short: "Builder and systems-minded operator shipping practical tools and documenting real work."
-  long: "Builder and systems-minded operator focused on durable systems, ethical growth, and real-world execution."
+  short: "Builder and systems operator shipping practical tools, infrastructure, and documented workflows."
+  long: "Builder and systems-minded operator focused on durable systems, ethical growth, and real-world execution across construction, automation, and public documentation."
 
-# Contact & social
-# Keep email blank until you choose what to publish.
+links:
+  primary:
+    - label: "Tillerstead"
+      url: "https://tillerstead.com"
+      note: "Construction & property operations (commercial auxiliary)."
+    - label: "Faith Frontier"
+      url: "https://faithfrontier.org"
+      note: "Stewardship, governance, and public accountability work."
+    - label: "GitHub"
+      url: "https://github.com/DTB396"
+      note: "Open tools, workflows, and documentation."
+    - label: "Personal Hub"
+      url: "http://xtx396.info"
+      note: "Index & routing."
+
+contact:
+  email: "dTb33@pm.me"
+
 social:
   github: "https://github.com/DTB396"
   linkedin: "https://www.linkedin.com/in/devon-tyler-barber-392319292/"
@@ -18,39 +42,27 @@ social:
   instagram: "https://www.instagram.com/xdtb396/"
   youtube: "https://www.youtube.com/@dTb396"
   snapchat: "https://snapchat.com/t/nLT1gRcy"
-  email: ""
-  website: ""
 
-# Canonical “bio link” + related sites (renders nicely if you choose to loop websites)
-websites:
-  - label: "DTB396 Public Hub"
-    url: "https://dtb396.github.io/dTb396/"
-    primary: true
-  - label: "Faith Frontier"
-    url: "https://faithfrontier.org/"
-    primary: false
-
-# Investor / collaborator context (Home → Now / Next / Looking For)
 now_next_looking:
   now:
-    - "Shipping practical tools and field-ready systems."
+    - "Shipping field-tested tools and operational systems."
     - "Maintaining and iterating on active public projects."
-    - "Documenting processes with an emphasis on clarity and durability."
-
+    - "Documenting real processes with emphasis on clarity, durability, and compliance."
   next:
-    - "Publishing additional public demos and supporting documentation."
+    - "Publishing additional demos with supporting documentation."
     - "Refining automation and operational workflows for repeatable use."
-
+    - "Packaging select tools for sustainable revenue (services, licensing, or support)."
   looking_for:
     - "Values-aligned collaborators interested in long-term, ethical growth."
-    - "Constructive feedback from early users of tools in development."
+    - "Early users willing to provide constructive feedback."
+    - "Partners who respect process, documentation, and accountability."
 
-# Optional: light boundaries to reduce spam/noise (safe to publish)
-presence:
+boundaries:
   open_to:
     - "Collaboration"
     - "Product feedback"
     - "Long-term partnerships"
   not_open_to:
     - "Hype-driven claims"
+    - "Short-term extraction plays"
     - "Aggressive cold sales"
