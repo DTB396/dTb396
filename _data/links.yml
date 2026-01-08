@@ -30,8 +30,8 @@ pinned:
     status: active
     featured: true
 
-  - title: "Barber Cam (Preview)"
-    url: "https://dtb396.github.io/barber-cam-preview/"
+  - title: "Barber Cam"
+    url: "https://barberx.info/"
     description: "Public preview site for Barber Cam UI/UX experiments and demos."
     detail: "Lightweight preview environment for visuals and workflows. Public content only; excludes private repository material and sensitive data."
     tags: ["Tools", "Demo", "UI/UX"]
