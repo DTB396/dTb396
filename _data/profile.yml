@@ -1,6 +1,17 @@
-# identity.yml — public profile / link hub metadata
+# profile.yml — public profile / link hub metadata
 # Optimized for: clarity, credibility, collaboration, and monetization readiness.
 
+# --- Simple fields expected by pages (compat layer) ---
+name: "Devon Tyler Barber"
+display_name: "Devon Barber"
+handle: "DTB396"
+headline: "Builder · Systems Operator · Field-to-Product Execution"
+descriptor: "I build durable systems, ship practical tools, and document real-world execution—from job sites to code."
+
+# Render-friendly single string for templates like: “is based in {{ site.data.profile.location }}”
+location: "Galloway Township, Atlantic County, New Jersey, USA"
+
+# --- Structured source-of-truth (your original schema) ---
 identity:
   legal_name: "Devon Tyler Barber"
   display_name: "Devon Barber"
