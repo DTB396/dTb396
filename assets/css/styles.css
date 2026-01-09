@@ -1,10 +1,10 @@
 :root {
-  --bg: #0b0c0f;
-  --panel: #10131a;
-  --card: #0f1218;
-  --text: #e9eef7;
-  --muted: #a9b4c7;
-  --border: rgba(255,255,255,0.10);
+  --bg: #0b0d12;
+  --panel: #151b26;
+  --card: #121826;
+  --text: #f1f5fb;
+  --muted: #c7d1e0;
+  --border: rgba(255,255,255,0.18);
   --shadow: 0 12px 32px rgba(0,0,0,0.35);
   --accent: #7aa2ff;
   --accent2: #7cffc7;
@@ -89,7 +89,7 @@ code {
   flex-wrap: wrap;
 }
 .nav a {
-  color: var(--muted);
+  color: color-mix(in srgb, var(--text) 82%, var(--muted));
   padding: 8px 10px;
   border-radius: 10px;
   border: 1px solid transparent;
@@ -410,10 +410,10 @@ code {
   padding: 12px 14px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.03);
+  background: rgba(255,255,255,.06);
   text-decoration: none;
 }
-.contact-card:hover { transform: translateY(-1px); background: rgba(255,255,255,.05); }
+.contact-card:hover { transform: translateY(-1px); background: rgba(255,255,255,.08); }
 .contact-card__label { color: var(--muted); font-weight: 600; }
 .contact-card__value { font-weight: 800; }
 
@@ -798,8 +798,8 @@ code {
   line-height: 1.5;
 }
 
-.muted {
-  color: var(--footer-muted, #a5a8b0);
+.footer .muted {
+  color: var(--footer-muted, #c2c7d2);
 }
 
 .footer__bar {
