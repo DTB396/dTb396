@@ -4,29 +4,6 @@ layout: default
 
 {% assign profile = site.data.profile | default: {} %}
 {% assign links = site.data.links | default: {} %}
-{% assign projects = site.data.projects | default: {} %}
-{% assign project_items = projects.projects | default: empty %}
-{% assign status_updates = projects.status_updates | default: empty %}
-{% assign blog = site.data.blog | default: {} %}
-{% assign blog_posts = blog.posts | default: empty %}
-{% assign blog_filters = blog.filters | default: empty %}
-{% assign investor = site.data.investor | default: {} %}
-{% assign investor_overview = investor.overview | default: empty %}
-{% assign investor_milestones = investor.milestones | default: empty %}
-{% assign investor_documents = investor.documents | default: empty %}
-{% assign management_progress = investor.management_progress | default: empty %}
-{% assign pro_links = site.data.pro_links | default: {} %}
-{% assign pro_sections = pro_links.sections | default: empty %}
-{% assign tiles = site.data.tiles | default: {} %}
-{% assign tile_items = tiles.tiles | default: empty %}
-
-{% assign pinned = links.pinned | default: empty %}
-{% assign pinned_count = pinned | size %}
-
-{% assign nnl = profile.now_next_looking | default: {} %}
-{% assign now_items = nnl.now | default: empty %}
-{% assign next_items = nnl.next | default: empty %}
-{% assign looking_items = nnl.looking_for | default: empty %}
 
 <section class="hero hero--clean" aria-label="Hero">
   <div class="container">
@@ -96,204 +73,51 @@ layout: default
 
 <section class="container" id="pinned">
   <div class="section__head">
-    <h2 class="section__title">Featured Projects</h2>
+    <h2 class="section__title">Featured Work</h2>
     <p class="section__blurb">Public-facing work with active delivery and documentation.</p>
   </div>
 
-  {% if pinned_count > 0 %}
-    <div class="grid {% if pinned_count == 4 %}grid--pinned-4{% endif %}">
-      {% for item in pinned %}
+  {% if links.pinned.size > 0 %}
+    <div class="grid {% if links.pinned.size == 4 %}grid--pinned-4{% endif %}">
+      {% for item in links.pinned %}
         {% include link-card.html item=item %}
       {% endfor %}
     </div>
   {% endif %}
 </section>
 
-<section class="container" id="projects">
+<section class="container" id="now-next">
   <div class="section__head">
-    <h2 class="section__title">Project &amp; Work Sharing</h2>
-    <p class="section__blurb">Dynamic tiles for ongoing and completed initiatives.</p>
+    <h2 class="section__title">Now / Next / Looking For</h2>
   </div>
 
-  {% if project_items and project_items.size > 0 %}
-    <div class="tile-grid" data-tiles>
-      {% for project in project_items %}
-        <article class="tile tile--project" data-tile>
-          <div class="tile__head">
-            <h3>{{ project.title }}</h3>
-            <span class="pill" data-status="{{ project.status | escape }}">
-              {{ project.status | replace: "_", " " | capitalize }}
-            </span>
-          </div>
-          <p class="muted">{{ project.description }}</p>
-          <div class="tile__meta">
-            <span>{{ project.focus }}</span>
-            <a class="tile__link" href="{{ project.url }}">View</a>
-          </div>
-          {% if project.tags %}
-            <ul class="tags" role="list">
-              {% for tag in project.tags %}
-                <li class="tag">{{ tag }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </div>
-  {% else %}
-    <div class="panel">
-      <p class="muted">Add projects under <code>/_data/projects.yml</code> to populate this section.</p>
-    </div>
-  {% endif %}
-</section>
-
-<section class="container" id="status">
-  <div class="section__head">
-    <h2 class="section__title">Project Status Updates</h2>
-    <p class="section__blurb">Progress bars, timelines, and quick links to key initiatives.</p>
-  </div>
-
-  <div class="status-grid">
-    {% for project in project_items %}
-      <article class="status-card">
-        <div class="status-card__head">
-          <h3>{{ project.title }}</h3>
-          <a href="{{ project.url }}">Details ↗</a>
-        </div>
-        <p class="muted">{{ project.timeline.start }} → {{ project.timeline.end }}</p>
-        <div class="progress">
-          <span style="width: {{ project.progress }}%"></span>
-        </div>
-        <p class="status-card__note">{{ project.focus }}</p>
-      </article>
-    {% endfor %}
-  </div>
-
-  {% if status_updates and status_updates.size > 0 %}
-    <div class="status-updates">
-      {% for update in status_updates %}
-        <div class="status-update">
-          <div>
-            <strong>{{ update.title }}</strong>
-            <p class="muted">{{ update.detail }}</p>
-          </div>
-          <div class="progress progress--compact">
-            <span style="width: {{ update.progress }}%"></span>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  {% endif %}
-</section>
-
-<section class="container" id="investor">
-  <div class="section__head">
-    <h2 class="section__title">Investor Relations Dashboard</h2>
-    <p class="section__blurb">Key metrics, milestones, and documents for aligned partners.</p>
-  </div>
-
-  <div class="dashboard">
-    <div class="dashboard__metrics">
-      {% for metric in investor_overview %}
-        <div class="metric-card">
-          <p class="metric-card__label">{{ metric.label }}</p>
-          <p class="metric-card__value">{{ metric.value }}</p>
-          <p class="muted">{{ metric.detail }}</p>
-        </div>
-      {% endfor %}
-    </div>
-
-    <div class="dashboard__milestones">
-      <h3>Milestones &amp; Timeline</h3>
-      <ul class="timeline">
-        {% for milestone in investor_milestones %}
-          <li>
-            <div>
-              <strong>{{ milestone.title }}</strong>
-              <p class="muted">{{ milestone.summary }}</p>
-            </div>
-            <span class="timeline__meta">{{ milestone.date }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="dashboard__docs">
-      <h3>Essential Documents</h3>
-      <div class="doc-grid">
-        {% for doc in investor_documents %}
-          <a class="doc-card" href="{{ doc.url }}">
-            <div class="doc-card__type">{{ doc.type }}</div>
-            <div>
-              <strong>{{ doc.title }}</strong>
-              <p class="muted">{{ doc.note }}</p>
-            </div>
-          </a>
-        {% endfor %}
+  <div class="nnl">
+    {% if profile.now_next_looking.now %}
+      <div class="panel">
+        <h3>Now</h3>
+        <ul>
+          {% for x in profile.now_next_looking.now %}<li>{{ x }}</li>{% endfor %}
+        </ul>
       </div>
-    </div>
-  </div>
+    {% endif %}
 
-  {% if management_progress and management_progress.size > 0 %}
-    <div class="management">
-      <h3>Management Progress</h3>
-      <div class="management__grid">
-        {% for item in management_progress %}
-          <div class="management__card">
-            <div class="management__head">
-              <span>{{ item.label }}</span>
-              <span class="muted">{{ item.progress }}%</span>
-            </div>
-            <div class="progress">
-              <span style="width: {{ item.progress }}%"></span>
-            </div>
-            <p class="muted">{{ item.note }}</p>
-          </div>
-        {% endfor %}
+    {% if profile.now_next_looking.next %}
+      <div class="panel">
+        <h3>Next</h3>
+        <ul>
+          {% for x in profile.now_next_looking.next %}<li>{{ x }}</li>{% endfor %}
+        </ul>
       </div>
-    </div>
-  {% endif %}
-</section>
+    {% endif %}
 
-<section class="container" id="blog">
-  <div class="section__head">
-    <h2 class="section__title">Dynamic Blog &amp; Updates</h2>
-    <p class="section__blurb">Filter by category for business development, investor relations, and innovation.</p>
-  </div>
-
-  <div class="filters" role="tablist" aria-label="Filter updates">
-    <button class="filter-btn is-active" data-filter="all" type="button">All</button>
-    {% for filter in blog_filters %}
-      <button class="filter-btn" data-filter="{{ filter | downcase | replace: ' ', '-' }}" type="button">
-        {{ filter }}
-      </button>
-    {% endfor %}
-  </div>
-
-  <div class="tile-grid tile-grid--blog" data-blog-grid>
-    {% for post in blog_posts %}
-      <article class="tile tile--blog" data-tags="{{ post.tags | join: ',' | downcase | replace: ' ', '-' }}">
-        <div class="tile__head">
-          <h3>{{ post.title }}</h3>
-          <span class="pill">{{ post.category }}</span>
-        </div>
-        <p class="muted">{{ post.summary }}</p>
-        <div class="tile__meta">
-          <span>{{ post.date }}</span>
-          <a class="tile__link" href="{{ post.url }}">Read ↗</a>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-
-  <div class="panel panel--glow">
-    <h3>Admin Interface for Blog</h3>
-    <p class="muted">Use markdown-friendly files and structured data to publish fast updates with rich media.</p>
-    <ul class="list">
-      <li><strong>Markdown-ready:</strong> Draft posts in <code>_posts</code> or <code>_data/blog.yml</code> and deploy quickly.</li>
-      <li><strong>Rich media:</strong> Embed images, video links, and external documents within each entry.</li>
-      <li><strong>Tagged discovery:</strong> Categories and tags drive filtering and search-ready organization.</li>
-    </ul>
+    {% if profile.now_next_looking.looking_for %}
+      <div class="panel">
+        <h3>Looking For</h3>
+        <ul>
+          {% for x in profile.now_next_looking.looking_for %}<li>{{ x }}</li>{% endfor %}
+        </ul>
+      </div>
+    {% endif %}
   </div>
 </section>
 
@@ -304,7 +128,7 @@ layout: default
   </div>
 
   <div class="link-grid">
-    {% for section in pro_sections %}
+    {% for section in links.sections %}
       <div class="link-group">
         <h3>{{ section.title }}</h3>
         <p class="muted">{{ section.blurb }}</p>
@@ -321,65 +145,13 @@ layout: default
   </div>
 </section>
 
-<section class="container" id="tile-studio">
-  <div class="section__head">
-    <h2 class="section__title">Tile Studio</h2>
-    <p class="section__blurb">Drag, drop, and rearrange tiles for rapid page building.</p>
-  </div>
-
-  <div class="tile-studio panel">
-    <div class="tile-grid tile-grid--studio" id="tile-builder">
-      {% for tile in tile_items %}
-        <div class="tile tile--studio" data-tile>
-          <h3>{{ tile.title }}</h3>
-          <p class="muted">{{ tile.description }}</p>
-          <span class="pill">{{ tile.type }}</span>
-        </div>
-      {% endfor %}
-    </div>
-    <p class="muted">Drag tiles to simulate layout planning. Save changes in your content data files.</p>
-  </div>
-</section>
-
-<section class="container" id="now-next">
-  <div class="section__head">
-    <h2 class="section__title">Now / Next / Looking For</h2>
-            </div>
-
-  <div class="nnl">
-    {% if now_items and now_items.size > 0 %}
-      <div class="panel">
-        <h3>Now</h3>
-        <ul>
-          {% for x in now_items %}<li>{{ x }}</li>{% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    {% if next_items and next_items.size > 0 %}
-      <div class="panel">
-        <h3>Next</h3>
-        <ul>
-          {% for x in next_items %}<li>{{ x }}</li>{% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    {% if looking_items and looking_items.size > 0 %}
-      <div class="panel">
-        <h3>Looking For</h3>
-        <ul>
-          {% for x in looking_items %}<li>{{ x }}</li>{% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-  </div>
-</section>
-
 <section class="container" id="notes">
   <div class="section__head">
     <h2 class="section__title">Terms</h2>
     <p class="section__blurb">Project rules and expectations.</p>
+  </div>
+  <div class="social-share">
+    <span>Share your ambition—"Building by day, dreaming by night!"</span>
   </div>
 
   <div class="panel">
@@ -389,4 +161,16 @@ layout: default
       <li><strong>Calm civics language:</strong> This site avoids inflammatory framing and sticks to factual descriptions.</li>
     </ul>
   </div>
+
+  <div class="dream-message" id="dreamMessage" style="display:none;">
+    <p>Your ambition is limitless—build by day, dream by night. Let's make it happen!</p>
+  </div>
+
+  <button class="unlock-button" onclick="revealDreamMessage()">Unlock Your Dream</button>
+
+  <script>
+    function revealDreamMessage() {
+      document.getElementById("dreamMessage").style.display = "block";
+    }
+  </script>
 </section>
