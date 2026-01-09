@@ -90,14 +90,16 @@
     });
   }
 })();
-window.addEventListener("scroll", () => {
-  const socialShare = document.querySelector(".social-share");
-  if (window.scrollY > 500) {
-    socialShare.classList.add("show");
-  } else {
-    socialShare.classList.remove("show");
-  }
-});
+const socialShare = document.querySelector(".social-share");
+if (socialShare) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      socialShare.classList.add("show");
+    } else {
+      socialShare.classList.remove("show");
+    }
+  });
+}
 const sections = document.querySelectorAll('.section');
 
 window.addEventListener('scroll', () => {
