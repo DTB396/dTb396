@@ -92,7 +92,7 @@ code {
   flex-wrap: wrap;
 }
 .nav a {
-  color: var(--muted);
+  color: color-mix(in srgb, var(--text) 82%, var(--muted));
   padding: 8px 10px;
   border-radius: 10px;
   border: 1px solid transparent;
@@ -413,10 +413,10 @@ code {
   padding: 12px 14px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,.03);
+  background: rgba(255,255,255,.06);
   text-decoration: none;
 }
-.contact-card:hover { transform: translateY(-1px); background: rgba(255,255,255,.05); }
+.contact-card:hover { transform: translateY(-1px); background: rgba(255,255,255,.08); }
 .contact-card__label { color: var(--muted); font-weight: 600; }
 .contact-card__value { font-weight: 800; }
 
@@ -801,8 +801,8 @@ code {
   line-height: 1.5;
 }
 
-.muted {
-  color: var(--footer-muted, #a5a8b0);
+.footer .muted {
+  color: var(--footer-muted, #c2c7d2);
 }
 
 .footer__bar {

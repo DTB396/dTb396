@@ -1,0 +1,24 @@
+{
+  "commands": [
+    {
+      "name": "scan-failed-deployments",
+      "description": "Scan GitHub deployments that failed or errored.",
+      "command": "pwsh -NoProfile -File ./scripts/scan-deployments.ps1"
+    },
+    {
+      "name": "resolve-conflicts",
+      "description": "Resolve git merge conflicts using the ours strategy.",
+      "command": "pwsh -NoProfile -File ./scripts/resolve-conflicts.ps1 -Strategy ours"
+    }
+  ],
+  "commandSets": [
+    {
+      "name": "scan-and-resolve",
+      "description": "Scan failed deployments then resolve merge conflicts.",
+      "commands": [
+        "scan-failed-deployments",
+        "resolve-conflicts"
+      ]
+    }
+  ]
+}

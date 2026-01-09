@@ -106,12 +106,6 @@ layout: default
         {% include link-card.html item=item %}
       {% endfor %}
     </div>
-  {% else %}
-    <div class="panel">
-      <p class="muted">
-        No pinned projects yet. Add items under <code>pinned:</code> in <code>/_data/links.yml</code>.
-      </p>
-    </div>
   {% endif %}
 </section>
 
@@ -353,38 +347,32 @@ layout: default
             </div>
 
   <div class="nnl">
-    <div class="panel">
-      <h3>Now</h3>
-      <ul>
-        {% if now_items and now_items.size > 0 %}
+    {% if now_items and now_items.size > 0 %}
+      <div class="panel">
+        <h3>Now</h3>
+        <ul>
           {% for x in now_items %}<li>{{ x }}</li>{% endfor %}
-        {% else %}
-          <li class="muted">Add items under <code>now_next_looking.now</code>.</li>
-        {% endif %}
-      </ul>
-    </div>
+        </ul>
+      </div>
+    {% endif %}
 
-    <div class="panel">
-      <h3>Next</h3>
-      <ul>
-        {% if next_items and next_items.size > 0 %}
+    {% if next_items and next_items.size > 0 %}
+      <div class="panel">
+        <h3>Next</h3>
+        <ul>
           {% for x in next_items %}<li>{{ x }}</li>{% endfor %}
-        {% else %}
-          <li class="muted">Add items under <code>now_next_looking.next</code>.</li>
-        {% endif %}
-      </ul>
-    </div>
+        </ul>
+      </div>
+    {% endif %}
 
-    <div class="panel">
-      <h3>Looking For</h3>
-      <ul>
-        {% if looking_items and looking_items.size > 0 %}
+    {% if looking_items and looking_items.size > 0 %}
+      <div class="panel">
+        <h3>Looking For</h3>
+        <ul>
           {% for x in looking_items %}<li>{{ x }}</li>{% endfor %}
-        {% else %}
-          <li class="muted">Add items under <code>now_next_looking.looking_for</code>.</li>
-        {% endif %}
-      </ul>
-    </div>
+        </ul>
+      </div>
+    {% endif %}
   </div>
 </section>
 

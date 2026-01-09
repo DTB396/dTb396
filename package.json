@@ -1,0 +1,10 @@
+{
+  "name": "xtx396-info",
+  "private": true,
+  "devDependencies": {
+    "@axe-core/cli": "^4.8.4"
+  },
+  "scripts": {
+    "contrast": "axe --tags wcag2aa --rules color-contrast http://localhost:4000"
+  }
+}
