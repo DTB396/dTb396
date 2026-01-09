@@ -1,0 +1,69 @@
+projects:
+  - title: "Tillerstead Field Ops"
+    url: "https://tillerstead.com/"
+    description: "Residential and commercial tile + maintenance operations with documented scope, compliance, and craftsmanship."
+    status: "active"
+    progress: 72
+    timeline:
+      start: "Q2 2024"
+      end: "Q4 2025"
+    focus: "Field execution, client delivery, quality systems"
+    tags: ["Construction", "Operations", "Compliance"]
+
+  - title: "Faith Frontier Governance"
+    url: "https://faithfrontier.org/"
+    description: "Public governance library, stewardship frameworks, and record-keeping for mission-aligned work."
+    status: "active"
+    progress: 58
+    timeline:
+      start: "Q1 2024"
+      end: "Q1 2026"
+    focus: "Documentation, accountability, governance"
+    tags: ["Mission", "Governance", "Publishing"]
+
+  - title: "Investor Relations Hub"
+    url: "https://xtx396.info/"
+    description: "Investor-ready briefs, milestones, and reporting dashboards for long-term partners."
+    status: "in_development"
+    progress: 44
+    timeline:
+      start: "Q3 2024"
+      end: "Q2 2025"
+    focus: "Reporting, stakeholder alignment, transparency"
+    tags: ["Investor Relations", "Dashboards", "Metrics"]
+
+  - title: "Operational Command Center"
+    url: "https://github.com/DTB396"
+    description: "Automation workflows, process checklists, and technical playbooks for repeatable execution."
+    status: "active"
+    progress: 63
+    timeline:
+      start: "Q4 2023"
+      end: "Q4 2025"
+    focus: "Automation, SOPs, workflow design"
+    tags: ["Automation", "Systems", "Tooling"]
+
+  - title: "Productized Service Kits"
+    url: "https://tillerstead.com/"
+    description: "Packaged service offerings and documented onboarding for scalable delivery."
+    status: "in_development"
+    progress: 38
+    timeline:
+      start: "Q1 2025"
+      end: "Q3 2025"
+    focus: "Packaging, pricing, quality assurance"
+    tags: ["Business Development", "Sales Enablement", "Quality"]
+
+status_updates:
+  - title: "Site Operations"
+    detail: "Active jobs and maintenance cycles with clear change-order policies."
+    progress: 76
+  - title: "Governance Publishing"
+    detail: "New case documentation, audit logs, and public record templating."
+    progress: 61
+  - title: "Investor Readiness"
+    detail: "Monthly reporting cadence, KPI snapshots, and partner briefs."
+    progress: 48
+  - title: "Automation Runbooks"
+    detail: "Standardized workflows for repeatable deployments and updates."
+    progress: 69

@@ -1,0 +1,55 @@
+overview:
+  - label: "Operational Readiness"
+    value: "86%"
+    detail: "Standardized process coverage and quality checks."
+  - label: "Delivery Velocity"
+    value: "3.4 wk"
+    detail: "Average cycle time for published deliverables."
+  - label: "Capital Efficiency"
+    value: "Lean"
+    detail: "Cash-positive operations with staged reinvestment."
+  - label: "Stakeholder Coverage"
+    value: "Monthly"
+    detail: "Briefings, milestones, and partner updates."
+
+milestones:
+  - title: "Public project scorecards"
+    date: "Nov 2024"
+    status: "on_track"
+    summary: "Unified scorecards for project health and output cadence."
+  - title: "Investor portal launch"
+    date: "Jan 2025"
+    status: "in_progress"
+    summary: "Secure document library + KPI snapshots."
+  - title: "Partnership readiness review"
+    date: "Mar 2025"
+    status: "planned"
+    summary: "Audit of partnership pipeline and compliance artifacts."
+
+documents:
+  - title: "Partner Briefing Deck"
+    type: "PDF"
+    url: "https://xtx396.info/docs/partner-briefing.pdf"
+    note: "Overview of mission, operations, and growth strategy."
+  - title: "KPI Snapshot"
+    type: "Spreadsheet"
+    url: "https://xtx396.info/docs/kpi-snapshot.xlsx"
+    note: "Key metrics, cadence, and progress notes."
+  - title: "Milestone Tracker"
+    type: "PDF"
+    url: "https://xtx396.info/docs/milestone-tracker.pdf"
+    note: "Timeline of active initiatives and dependencies."
+
+management_progress:
+  - label: "Business Development"
+    progress: 62
+    note: "Pipeline refresh and partnership readiness."
+  - label: "Investor Relations"
+    progress: 54
+    note: "Reporting cadence + document updates."
+  - label: "Operational Systems"
+    progress: 78
+    note: "Automation, SOP updates, delivery checklists."
+  - label: "Team Enablement"
+    progress: 46
+    note: "Hiring pipeline + training materials."
