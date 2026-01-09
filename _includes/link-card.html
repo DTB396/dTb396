@@ -1,30 +1,16 @@
 <article class="card">
   <div class="card__body">
     <div class="card__top">
-      <h3 class="card__title">
-        <a href="{{ include.item.url }}">{{ include.item.title }}</a>
-      </h3>
-
+      <h3 class="card__title"><a href="{{ include.item.url }}">{{ include.item.title }}</a></h3>
       {% if include.item.status %}
-        <span class="pill" data-status="{{ include.item.status | escape }}">
-          {{ include.item.status | replace: "_", " " | capitalize }}
-        </span>
+        <span class="pill" data-status="{{ include.item.status | escape }}">{{ include.item.status | replace: "_", " " | capitalize }}</span>
       {% endif %}
     </div>
-
-    {% if include.item.description %}
-      <p class="card__desc">{{ include.item.description }}</p>
-    {% endif %}
-
+    {% if include.item.description %}<p class="card__desc">{{ include.item.description }}</p>{% endif %}
     {% if include.item.tags and include.item.tags.size > 0 %}
-      <ul class="tags" role="list">
-        {% for t in include.item.tags %}
-          <li class="tag">{{ t }}</li>
-        {% endfor %}
-      </ul>
+      <ul class="tags" role="list">{% for t in include.item.tags %}<li class="tag">{{ t }}</li>{% endfor %}</ul>
     {% endif %}
   </div>
-
   <div class="card__meta">
     <span class="muted">{{ include.item.url | replace: "https://", "" | replace: "http://", "" }}</span>
     <span aria-hidden="true">↗</span>

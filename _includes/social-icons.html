@@ -3,65 +3,32 @@
 
 <div class="social" aria-label="Social links">
   {%- assign icons = "" | split: "" -%}
-
   {%- if s.github %}{% assign icons = icons | push: "github" %}{% endif -%}
   {%- if s.linkedin %}{% assign icons = icons | push: "linkedin" %}{% endif -%}
-
-  {%- for site in sites -%}
-    {%- assign icons = icons | push: site -%}
-  {%- endfor -%}
-
+  {%- for site in sites -%}{% assign icons = icons | push: site -%}{% endfor -%}
   {%- if s.x %}{% assign icons = icons | push: "x" %}{% endif -%}
   {%- if s.instagram %}{% assign icons = icons | push: "instagram" %}{% endif -%}
   {%- if s.youtube %}{% assign icons = icons | push: "youtube" %}{% endif -%}
   {%- if s.snapchat %}{% assign icons = icons | push: "snapchat" %}{% endif -%}
   {%- if s.email %}{% assign icons = icons | push: "email" %}{% endif -%}
-
   {%- for icon in icons -%}
     {% case icon %}
       {% when "github" %}
-        <a class="iconbtn is-primary" href="{{ s.github }}" aria-label="GitHub" data-tooltip="GitHub" rel="me noopener noreferrer">
-          <span class="icon">{% include svg/github.svg %}</span>
-        </a>
-
+        <a class="iconbtn is-primary" href="{{ s.github }}" aria-label="GitHub" data-tooltip="GitHub" rel="me noopener noreferrer"><span class="icon">{% include svg/github.svg %}</span></a>
       {% when "linkedin" %}
-        <a class="iconbtn is-primary" href="{{ s.linkedin }}" aria-label="LinkedIn" data-tooltip="LinkedIn" rel="me noopener noreferrer">
-          <span class="icon">{% include svg/linkedin.svg %}</span>
-        </a>
-
+        <a class="iconbtn is-primary" href="{{ s.linkedin }}" aria-label="LinkedIn" data-tooltip="LinkedIn" rel="me noopener noreferrer"><span class="icon">{% include svg/linkedin.svg %}</span></a>
       {% when "x" %}
-        <a class="iconbtn" href="{{ s.x }}" aria-label="X" data-tooltip="X" rel="me noopener noreferrer">
-          <span class="icon">{% include svg/x.svg %}</span>
-        </a>
-
+        <a class="iconbtn" href="{{ s.x }}" aria-label="X" data-tooltip="X" rel="me noopener noreferrer"><span class="icon">{% include svg/x.svg %}</span></a>
       {% when "instagram" %}
-        <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram" data-tooltip="Instagram" rel="me noopener noreferrer">
-          <span class="icon">{% include svg/instagram.svg %}</span>
-        </a>
-
+        <a class="iconbtn" href="{{ s.instagram }}" aria-label="Instagram" data-tooltip="Instagram" rel="me noopener noreferrer"><span class="icon">{% include svg/instagram.svg %}</span></a>
       {% when "youtube" %}
-        <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube" data-tooltip="YouTube" rel="me noopener noreferrer">
-          <span class="icon">{% include svg/youtube.svg %}</span>
-        </a>
-
+        <a class="iconbtn" href="{{ s.youtube }}" aria-label="YouTube" data-tooltip="YouTube" rel="me noopener noreferrer"><span class="icon">{% include svg/youtube.svg %}</span></a>
       {% when "snapchat" %}
-        <a class="iconbtn" href="{{ s.snapchat }}" aria-label="Snapchat" data-tooltip="Snapchat" rel="me noopener noreferrer">
-          <span class="icon">{% include svg/snapchat.svg %}</span>
-        </a>
-
+        <a class="iconbtn" href="{{ s.snapchat }}" aria-label="Snapchat" data-tooltip="Snapchat" rel="me noopener noreferrer"><span class="icon">{% include svg/snapchat.svg %}</span></a>
       {% when "email" %}
-        <a class="iconbtn" href="mailto:{{ s.email | escape }}" aria-label="Email" data-tooltip="Email">
-          <span class="icon">{% include svg/mail.svg %}</span>
-        </a>
-
+        <a class="iconbtn" href="mailto:{{ s.email | escape }}" aria-label="Email" data-tooltip="Email"><span class="icon">{% include svg/mail.svg %}</span></a>
       {% else %}
-        <a class="iconbtn {% if icon.primary %}is-primary{% endif %} is-globe"
-           href="{{ icon.url }}"
-           aria-label="{{ icon.label }}"
-           data-tooltip="{{ icon.label }}"
-           rel="noopener noreferrer">
-          <span class="icon">{% include svg/globe.svg %}</span>
-        </a>
+        <a class="iconbtn{% if icon.primary %} is-primary{% endif %} is-globe" href="{{ icon.url }}" aria-label="{{ icon.label }}" data-tooltip="{{ icon.label }}" rel="noopener noreferrer"><span class="icon">{% include svg/globe.svg %}</span></a>
     {% endcase %}
   {%- endfor -%}
 </div>

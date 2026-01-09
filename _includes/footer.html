@@ -1,16 +1,11 @@
+
 <footer class="footer" id="site-footer">
   <div class="container">
-
     <div class="footer__grid">
-
       <!-- Contact -->
       <section class="footer__col" aria-labelledby="footer-contact">
         <h2 class="footer__title" id="footer-contact">Contact</h2>
-
-        <div class="footer__icons">
-          {% include social-icons.html %}
-        </div>
-
+        <div class="footer__icons">{% include social-icons.html %}</div>
         {% assign s = site.data.profile.social %}
         <nav aria-label="Social links">
           <ul class="footer__list" role="list">
@@ -22,17 +17,15 @@
             {% if s.instagram %}<li><a href="{{ s.instagram }}">Instagram</a></li>{% endif %}
           </ul>
         </nav>
-
         <h3 class="footer__title footer__title--spaced">Pages</h3>
         <nav aria-label="Footer pages">
           <ul class="footer__list" role="list">
-            <li><a href="{{ "/" | relative_url }}">Home</a></li>
-            <li><a href="{{ "/projects/" | relative_url }}">Projects</a></li>
-            <li><a href="{{ "/about/" | relative_url }}">About</a></li>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
           </ul>
         </nav>
       </section>
-
       <!-- IP / Trademark -->
       <section class="footer__col" aria-labelledby="footer-ip">
         <h2 class="footer__title" id="footer-ip">IP + trademark</h2>
@@ -41,14 +34,12 @@
           Project names, logos, and third-party marks are the property of their respective owners.
           Nothing here grants rights to third-party marks.
         </p>
-
         <h3 class="footer__title footer__title--spaced">Repository</h3>
         <p class="muted footer__text">
           Source is published on GitHub under the license in this repository.
           Linked projects may have separate licenses.
         </p>
       </section>
-
       <!-- Privacy -->
       <section class="footer__col" aria-labelledby="footer-privacy">
         <h2 class="footer__title" id="footer-privacy">Privacy</h2>
@@ -56,19 +47,15 @@
           This is a static GitHub Pages site. It does not intentionally collect personal data,
           run ads, or embed tracking pixels. Standard hosting logs may be processed by GitHub.
         </p>
-
         <h3 class="footer__title footer__title--spaced">Use</h3>
         <p class="muted footer__text">
           Links are provided for reference. Descriptions are informational and may change.
         </p>
       </section>
-
     </div>
-
     <div class="footer__bar">
       <span>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} • {{ site.data.profile.location }}</span>
       <span class="muted">Fast, static, and easy to maintain.</span>
     </div>
-
   </div>
 </footer>
