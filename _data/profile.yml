@@ -2,22 +2,21 @@
 # Optimized for: clarity, credibility, collaboration, and monetization readiness.
 
 # --- Simple fields expected by pages (compat layer) ---
-name: "Devon Tyler Barber"
-display_name: "Devon Barber"
-handle: "DTB396"
-headline: "Builder · Systems Operator · Field-to-Product Execution"
-descriptor: "I build durable systems, ship practical tools, and document real-world execution—from job sites to code."
-
+name: "Barber, Devon Tyler."
+display_name: "Devon Tyler"
+handle: "dTb396"
+headline: "Tiler | Builder | Systems Operator | Developer | Project Manager | Field-to-Product Expert"
+descriptor: "Building durable systems, delivering practical tools, and documenting real-world execution—from job sites to code."
 # Render-friendly single string for templates like: “is based in {{ site.data.profile.location }}”
-location: "Galloway Township, Atlantic County, New Jersey, USA"
+location: "Atlantic County, New Jersey, USA"
 
 # --- Structured source-of-truth (your original schema) ---
 identity:
-  legal_name: "Devon Tyler Barber"
-  display_name: "Devon Barber"
-  handle: "DTB396"
-  headline: "Builder · Systems Operator · Field-to-Product Execution"
-  descriptor: "I build durable systems, ship practical tools, and document real-world execution—from job sites to code."
+  legal_name: "Barber, Devon Tyler."
+  display_name: "Devon Tyler"
+  handle: "dTb396"
+  headline: "Tiler | Builder | Systems Operator | Developer | Project Manager | Field-to-Product Expert"
+  descriptor: "Building durable systems, delivering practical tools, and documenting real-world execution—from job sites to code."
   location:
     city: "Galloway Township"
     county: "Atlantic County"
@@ -25,23 +24,23 @@ identity:
     country: "USA"
 
 bio:
-  short: "Builder and systems operator shipping practical tools, infrastructure, and documented workflows."
-  long: "Builder and systems-minded operator focused on durable systems, ethical growth, and real-world execution across construction, automation, and public documentation."
+  short: "Builder and systems operator, delivering practical tools, infrastructure, and well-documented workflows."
+  long: "Builder and systems-focused operator dedicated to creating durable systems, fostering ethical growth, and executing real-world solutions across construction, automation, and public documentation."
 
 links:
   primary:
-    - label: "Tillerstead"
+    - label: "Tillerstead LLC"
       url: "https://tillerstead.com"
-      note: "Construction & property operations (commercial auxiliary)."
+      note: "Construction & property care solutions (inegrated auxiliary)."
     - label: "Faith Frontier"
       url: "https://faithfrontier.org"
       note: "Stewardship, governance, and public accountability work."
     - label: "GitHub"
       url: "https://github.com/DTB396"
-      note: "Open tools, workflows, and documentation."
-    - label: "Personal Hub"
+      note: "Tools, workflows, and documentation."
+    - label: "Trade Post"
       url: "http://xtx396.info"
-      note: "Index & routing."
+      note: "Central hub for indexing and routing."
 
 contact:
   email: "dTb33@pm.me"
@@ -55,18 +54,20 @@ social:
   snapchat: "https://snapchat.com/t/nLT1gRcy"
 
 now_next_looking:
-  now:
-    - "Shipping field-tested tools and operational systems."
-    - "Maintaining and iterating on active public projects."
-    - "Documenting real processes with emphasis on clarity, durability, and compliance."
-  next:
-    - "Publishing additional demos with supporting documentation."
-    - "Refining automation and operational workflows for repeatable use."
-    - "Packaging select tools for sustainable revenue (services, licensing, or support)."
-  looking_for:
-    - "Values-aligned collaborators interested in long-term, ethical growth."
-    - "Early users willing to provide constructive feedback."
-    - "Partners who respect process, documentation, and accountability."
+ now:
+  - "Shipping field-tested tools and systems for real-world application."
+  - "Maintaining and iterating on active public projects with a focus on quality."
+  - "Documenting processes with clarity, durability, and compliance."
+
+next:
+  - "Publishing additional demos with clear supporting documentation."
+  - "Refining automation and operational workflows for scalability and repeatability."
+  - "Packaging select tools for sustainable revenue streams (services, licensing, or support)."
+
+looking_for:
+  - "Collaborators aligned with long-term, ethical growth."
+  - "Early users providing constructive feedback to refine offerings."
+  - "Partners who value process, documentation, and accountability."
 
 boundaries:
   open_to:
