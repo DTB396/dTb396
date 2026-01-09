@@ -1,35 +1,28 @@
 <header class="header">
   <div class="container header__inner">
     <div class="brand">
-      <a class="brand__link" href="{{ "/" | relative_url }}">
+      <a class="brand__link" href="{{ '/' | relative_url }}">
         <span class="brand__name">{{ site.data.profile.name }}</span>
         <span class="brand__meta">{{ site.data.profile.location }}</span>
       </a>
     </div>
-
-    <button class="navbtn"
-      type="button"
-      aria-label="Open menu"
-      aria-controls="mobile-nav"
-      aria-expanded="false">
+    <button class="navbtn" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
       <span class="navbtn__icon" aria-hidden="true"></span>
     </button>
-
     <nav class="nav nav--desktop" aria-label="Primary">
-      <a href="{{ "/" | relative_url }}" class="{% if page.url == "/" %}is-active{% endif %}">Home</a>
-      <a href="{{ "/projects/" | relative_url }}" class="{% if page.url contains "/projects/" %}is-active{% endif %}">Projects</a>
-      <a href="{{ "/about/" | relative_url }}" class="{% if page.url contains "/about/" %}is-active{% endif %}">About</a>
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}is-active{% endif %}">Home</a>
+      <a href="{{ '/projects/' | relative_url }}" class="{% if page.url contains '/projects/' %}is-active{% endif %}">Projects</a>
+      <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about/' %}is-active{% endif %}">About</a>
       <a href="https://github.com/{{ site.data.profile.handle }}" rel="noopener noreferrer">GitHub</a>
       <a href="#site-footer">Contact</a>
     </nav>
   </div>
-
   <!-- Mobile drawer -->
   <div class="navdrawer" id="mobile-nav" hidden>
     <div class="container navdrawer__inner">
-      <a href="{{ "/" | relative_url }}" class="{% if page.url == "/" %}is-active{% endif %}">Home</a>
-      <a href="{{ "/projects/" | relative_url }}" class="{% if page.url contains "/projects/" %}is-active{% endif %}">Projects</a>
-      <a href="{{ "/about/" | relative_url }}" class="{% if page.url contains "/about/" %}is-active{% endif %}">About</a>
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}is-active{% endif %}">Home</a>
+      <a href="{{ '/projects/' | relative_url }}" class="{% if page.url contains '/projects/' %}is-active{% endif %}">Projects</a>
+      <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about/' %}is-active{% endif %}">About</a>
       <a href="https://github.com/{{ site.data.profile.handle }}" rel="noopener noreferrer">GitHub</a>
       <a href="#site-footer">Contact</a>
     </div>

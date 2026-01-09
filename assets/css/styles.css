@@ -16,9 +16,9 @@
   --max: 1160px;
   --font: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 =======
-  --bg: #0b0c10;
-  --panel: #151a23;
-  --card: #181e29;
+  --bg: #f5f3e7;
+  --panel: #e0ded6;
+  --card: #f5f3e7;
   --text: #f3f6fb;
   --muted: #b0b8c9;
   --border: rgba(200,220,255,0.10);
@@ -59,9 +59,10 @@ body {
               linear-gradient(120deg, #0d1222 0%, #101528 35%, #111a3a 100%);
   line-height: 1.55;
 =======
-  background: radial-gradient(1200px 600px at 15% 10%, rgba(122,162,255,0.13), transparent 60%),
-              radial-gradient(900px 500px at 80% 0%, rgba(124,255,199,0.09), transparent 55%),
-              var(--bg);
+  background: 
+    repeating-linear-gradient(135deg, #f5f3e7 0px, #e0ded6 40px, #f5f3e7 80px),
+    linear-gradient(135deg, #f5f3e7 0%, #e0ded6 100%),
+    var(--bg);
   line-height: 1.6;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
@@ -258,11 +259,11 @@ code {
 }
 
 .hero__panel {
-  background: repeating-linear-gradient(135deg, #ff6ec7, #ff6ec7 20px, #fff200 20px, #fff200 40px), var(--panel);
-  border: 6px double #00ff00;
-  border-radius: 32px;
-  padding: 24px;
-  box-shadow: 8px 8px 0 #ff00cc, 0 0 24px #00ff00;
+  background: linear-gradient(135deg, #f5f3e7 0%, #e0ded6 100%);
+  border: 1.5px solid #bdb9a6;
+  border-radius: 20px;
+  padding: 28px 22px 22px 22px;
+  box-shadow: 0 2px 16px 0 #bdb9a633;
 }
 
 <<<<<<< HEAD
@@ -385,26 +386,28 @@ code {
 }
 
 .panel {
-  border-radius: 32px;
-  border: 8px groove #ff00cc;
-  background: repeating-linear-gradient(135deg, #fff200, #fff200 20px, #ff6ec7 20px, #ff6ec7 40px), url('https://www.transparenttextures.com/patterns/80s-waves.png'), var(--panel);
-  box-shadow: 12px 12px 0 #00ff00, 0 0 32px #ff00cc, 0 0 12px #fff200;
-  padding: 32px;
-  animation: panelPulse90s 1.6s infinite alternate cubic-bezier(.68,-0.55,.27,1.55);
-}
-@keyframes panelPulse90s {
-  0% { box-shadow: 12px 12px 0 #00ff00, 0 0 32px #ff00cc, 0 0 12px #fff200; }
-  100% { box-shadow: 0 0 32px #00ff00, 0 0 48px #ff00cc, 0 0 24px #fff200; }
+  border-radius: 20px;
+  border: 2px solid #ff00cc;
+  background: linear-gradient(120deg, var(--panel) 0%, var(--card) 100%);
+  box-shadow: 0 2px 16px 0 #ff00cc33;
+  padding: 24px;
 }
 
+/* Centered Now/Next/Future cards */
 .nnl {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
 }
 @media (max-width: 900px) {
-  .nnl { grid-template-columns: 1fr; }
+  .nnl {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
 }
 .panel h3 { margin: 0 0 8px; }
 .panel ul { margin: 0; padding-left: 18px; }
@@ -412,13 +415,14 @@ code {
 
 .footer {
   margin-top: 28px;
-  border-top: 8px ridge #ff00cc;
-  background: repeating-linear-gradient(90deg, #ff00cc, #ff00cc 20px, #00ff00 20px, #00ff00 40px), url('https://www.transparenttextures.com/patterns/80s-waves.png'), var(--bg);
+  border-top: 4px solid #ff00cc;
+  background: linear-gradient(120deg, #181e29 0%, #2bb673 100%);
   color: #1a0033;
   font-family: var(--font);
   font-size: 1.2em;
   text-shadow: 2px 2px 0 #fff200, 0 0 8px #ff00cc;
-  animation: footerGlow90s 2.2s infinite alternate cubic-bezier(.68,-0.55,.27,1.55);
+  /* Keep the 90s text flair, but background is now simple and readable */
+  /* Remove animation for background, keep for text if desired */
 }
 @keyframes footerGlow90s {
   0% { text-shadow: 2px 2px 0 #fff200, 0 0 8px #ff00cc; }
@@ -643,13 +647,20 @@ code {
 /* Optional: soften pure-white panels in light mode for better contrast */
 @media (prefers-color-scheme: light) {
   .hero__panel,
-  .panel,
-  .card {
-    background: linear-gradient(180deg, rgba(2,6,23,0.03), rgba(2,6,23,0.01)), var(--panel);
+  .panel {
+    border-radius: 18px;
+    border: 1.5px solid #bdb9a6;
+    background: linear-gradient(135deg, #f5f3e7 0%, #e0ded6 100%);
+    box-shadow: 0 2px 16px 0 #bdb9a633;
+    padding: 32px 28px 28px 28px;
+    min-width: 260px;
+    max-width: 340px;
+    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-}
-
-/* Tooltip */
 >>>>>>> d4ce363 (t)
 .iconbtn {
   position: relative;
