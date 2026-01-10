@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Barber, Devon Tyler · Devon Tyler — Public Hub</title>
-  # Add favicon to site
+  <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+
 <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
 
   
@@ -25,7 +26,9 @@
 <body class="">
   <a class="skip" href="#main">Skip to content</a>
 
-  <div class="page-loader" aria-hidden="true">
+
+  <!-- Loader visually hidden by default, can be toggled with JS if needed -->
+  <div class="page-loader" aria-hidden="true" hidden>
     <div>
       <div class="page-loader__bar"><span></span></div>
       <div class="page-loader__text">Loading</div>
@@ -78,10 +81,10 @@
         
           <p class="hero__location"><strong>Atlantic County, NJ</strong></p>
         
-        <div class="hero__cta">
+        <nav class="hero__cta" aria-label="Main actions">
           <a class="btn" href="#pinned">Explore Projects</a>
           <a class="btn btn--ghost" href="#now-next">Now / Next</a>
-        </div>
+        </nav>
         <div class="hero__social" aria-label="Social links">
 
 
@@ -122,10 +125,10 @@
       <aside class="hero__panel hero__panel--retro" aria-label="Credibility & Highlights">
         <div class="hero__panelTitle">Why Partner Here?</div>
         <ul class="hero__panelList" role="list">
-          <li><span class="muted">American Values</span><span>Integrity, accountability, and service-first delivery</span></li>
-          <li><span class="muted">Innovation</span><span>Lean systems, automation, and practical execution</span></li>
-          <li><span class="muted">Transparency</span><span>Clear milestones, public updates, and documented decisions</span></li>
-          <li><span class="muted">Purpose</span><span>Mission-led work with measurable outcomes</span></li>
+          <li><span class="muted">American Values:</span> Integrity, accountability, and service-first delivery</li>
+          <li><span class="muted">Innovation:</span> Lean systems, automation, and practical execution</li>
+          <li><span class="muted">Transparency:</span> Clear milestones, public updates, and documented decisions</li>
+          <li><span class="muted">Purpose:</span> Mission-led work with measurable outcomes</li>
         </ul>
         <p class="hero__panelNote muted"><strong>Ready to build?</strong> Explore projects or connect for an investor-ready brief.</p>
       </aside>
@@ -141,12 +144,12 @@
   <ul class="project-list">
     
       
-      <li class="project-card">
-        <div class="project-card-title">
-          <a href="/">xTx396.info Hub</a>
-        </div>
-        <div class="project-card-summary">Main portfolio hub for Devon Tyler.</div>
-      </li>
+        <li class="project-card">
+          <div class="project-card-title">
+            <a href="/">xTx396.info Hub</a>
+          </div>
+          <div class="project-card-summary">Main portfolio hub for Devon Tyler.</div>
+        </li>
       
     
       
@@ -158,14 +161,14 @@
   <div class="section__head">
     <h2 class="section__title">Now / Next / Looking For</h2>
   </div>
-  <div class="nnl">
+  <div class="nnl" style="display: flex; gap: 2rem; flex-wrap: wrap;">
     
-      <div class="panel">
-        <h3>Now</h3>
+      <section class="panel" aria-labelledby="now-title">
+        <h3 id="now-title">Now</h3>
         <ul>
           <li>Shipping field-tested tools and systems for real-world application.</li><li>Maintaining and iterating on active public projects with a focus on quality.</li><li>Documenting processes with clarity, durability, and compliance.</li>
         </ul>
-      </div>
+      </section>
     
     
     

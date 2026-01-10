@@ -1,3 +1,40 @@
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+
+.nnl {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.panel h3 {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  font-size: 1.15em;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.panel li {
+  margin-bottom: 0.4em;
+}
 /* Minimal, clean, lint-compliant CSS for xTx396.info */
 :root {
   --bg: #090c16;
