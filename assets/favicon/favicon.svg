@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+  <rect width="64" height="64" fill="#222"/>
+  <!-- Background dTb with uppercase T, faded -->
+  <text x="32" y="44" font-size="22" font-family="Arial Black,Arial,sans-serif" fill="#fff" text-anchor="middle" font-weight="bold" opacity="0.22">d<Tspan fill="#00eaff" font-weight="bolder">T</Tspan>b</text>
+  <!-- Single duo-tone T for cross in the center -->
+  <text x="32" y="34" font-size="28" font-family="Arial Black,Arial,sans-serif" fill="url(#duotone)" text-anchor="middle" font-weight="bold">T</text>
+  <defs>
+    <linearGradient id="duotone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00eaff"/>
+      <stop offset="100%" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <!-- Foreground wordmark: xTx396, lowercase x's, uppercase T, adjusted position -->
+  <text x="32" y="28" font-size="16" font-family="Arial Black,Arial,sans-serif" fill="#00eaff" text-anchor="middle" font-weight="bold">xTx396</text>
+</svg>
