@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
+<!-- filepath: c:\web-dev\github-repos\xTx396.info\_layouts\home.html -->
 ---
 layout: default
 ---
-
-{% assign profile = site.data.profile | default: {} %}
-{% assign links = site.data.links | default: {} %}
+{% assign profile = site.data.profile %}
+{% assign links = site.data.links %}
 
 <section class="hero hero--clean" aria-label="Hero">
   <div class="container">
@@ -78,7 +80,7 @@ layout: default
   </div>
 
   {% if links.pinned.size > 0 %}
-    <div class="grid {% raw %}{% if links.pinned.size == 4 %}grid--pinned-4{% endif %}{% endraw %}">
+      <div class="grid{% if links.pinned.size == 4 %} grid--pinned-4{% endif %}">
       {% for item in links.pinned %}
         {% include link-card.html item=item %}
       {% endfor %}

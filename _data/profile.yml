@@ -2,13 +2,13 @@
 # Optimized for: clarity, credibility, collaboration, and monetization readiness.
 
 # --- Simple fields expected by pages (compat layer) ---
-name: "Barber, Devon Tyler."
-display_name: "Devon Tyler"
-handle: "dTb396"
-headline: "Tiler | Builder | Systems Operator | Developer | Project Manager | Field-to-Product Expert"
-descriptor: "Building durable systems, delivering practical tools, and documenting real-world execution—from job sites to code."
-# Render-friendly single string for templates like: “is based in {{ site.data.profile.location }}”
-location: "Atlantic County, New Jersey, USA"
+name: "Devon Tyler"
+location: "Atlantic County, NJ"
+title: "Software Developer"
+bio: "Web development, automation, and digital infrastructure."
+email: "contact@xtx396.info"
+github: "DTB396"
+website: "xtx396.info"
 
 # --- Structured source-of-truth (your original schema) ---
 identity:

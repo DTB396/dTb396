@@ -4,10 +4,8 @@ title: "About"
 description: "About Devon Tyler — background, principles, and how to connect."
 permalink: /about/
 ---
-
 <section class="page">
   <header class="page__head">
-    <h1 class="page__title">About</h1>
     <p class="page__blurb">A transparent, principle-driven approach to building value and trust.</p>
   </header>
 
