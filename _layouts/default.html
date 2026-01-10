@@ -7,7 +7,9 @@
 <body class="{{ page.body_class | default: '' }}">
   <a class="skip" href="#main">Skip to content</a>
 
-  <div class="page-loader" aria-hidden="true">
+
+  <!-- Loader visually hidden by default, can be toggled with JS if needed -->
+  <div class="page-loader" aria-hidden="true" hidden>
     <div>
       <div class="page-loader__bar"><span></span></div>
       <div class="page-loader__text">Loading</div>

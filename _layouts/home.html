@@ -16,19 +16,19 @@ layout: default
         {% if profile.location %}
           <p class="hero__location"><strong>{{ profile.location }}</strong></p>
         {% endif %}
-        <div class="hero__cta">
+        <nav class="hero__cta" aria-label="Main actions">
           <a class="btn" href="#pinned">Explore Projects</a>
           <a class="btn btn--ghost" href="#now-next">Now / Next</a>
-        </div>
+        </nav>
         <div class="hero__social" aria-label="Social links">{% include social-icons.html %}</div>
       </div>
       <aside class="hero__panel hero__panel--retro" aria-label="Credibility & Highlights">
         <div class="hero__panelTitle">Why Partner Here?</div>
         <ul class="hero__panelList" role="list">
-          <li><span class="muted">American Values</span><span>Integrity, accountability, and service-first delivery</span></li>
-          <li><span class="muted">Innovation</span><span>Lean systems, automation, and practical execution</span></li>
-          <li><span class="muted">Transparency</span><span>Clear milestones, public updates, and documented decisions</span></li>
-          <li><span class="muted">Purpose</span><span>Mission-led work with measurable outcomes</span></li>
+          <li><span class="muted">American Values:</span> Integrity, accountability, and service-first delivery</li>
+          <li><span class="muted">Innovation:</span> Lean systems, automation, and practical execution</li>
+          <li><span class="muted">Transparency:</span> Clear milestones, public updates, and documented decisions</li>
+          <li><span class="muted">Purpose:</span> Mission-led work with measurable outcomes</li>
         </ul>
         <p class="hero__panelNote muted"><strong>Ready to build?</strong> Explore projects or connect for an investor-ready brief.</p>
       </aside>
@@ -44,12 +44,12 @@ layout: default
   <ul class="project-list">
     {% for project in projects %}
       {% if project.featured %}
-      <li class="project-card">
-        <div class="project-card-title">
-          <a href="{{ project.url | relative_url }}">{{ project.name }}</a>
-        </div>
-        <div class="project-card-summary">{{ project.summary }}</div>
-      </li>
+        <li class="project-card">
+          <div class="project-card-title">
+            <a href="{{ project.url | relative_url }}">{{ project.name }}</a>
+          </div>
+          <div class="project-card-summary">{{ project.summary }}</div>
+        </li>
       {% endif %}
     {% endfor %}
   </ul>
@@ -59,30 +59,30 @@ layout: default
   <div class="section__head">
     <h2 class="section__title">Now / Next / Looking For</h2>
   </div>
-  <div class="nnl">
+  <div class="nnl" style="display: flex; gap: 2rem; flex-wrap: wrap;">
     {% if profile.now_next_looking.now %}
-      <div class="panel">
-        <h3>Now</h3>
+      <section class="panel" aria-labelledby="now-title">
+        <h3 id="now-title">Now</h3>
         <ul>
           {% for x in profile.now_next_looking.now %}<li>{{ x }}</li>{% endfor %}
         </ul>
-      </div>
+      </section>
     {% endif %}
     {% if profile.now_next_looking.next %}
-      <div class="panel">
-        <h3>Next</h3>
+      <section class="panel" aria-labelledby="next-title">
+        <h3 id="next-title">Next</h3>
         <ul>
           {% for x in profile.now_next_looking.next %}<li>{{ x }}</li>{% endfor %}
         </ul>
-      </div>
+      </section>
     {% endif %}
     {% if profile.now_next_looking.looking_for %}
-      <div class="panel">
-        <h3>Looking For</h3>
+      <section class="panel" aria-labelledby="looking-title">
+        <h3 id="looking-title">Looking For</h3>
         <ul>
           {% for x in profile.now_next_looking.looking_for %}<li>{{ x }}</li>{% endfor %}
         </ul>
-      </div>
+      </section>
     {% endif %}
   </div>
 </section>
