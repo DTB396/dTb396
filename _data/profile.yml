@@ -1,80 +1,151 @@
-# profile.yml — public profile / link hub metadata
-# Optimized for: clarity, credibility, collaboration, and monetization readiness.
+# profile.yml — Devon Tyler Barber
+# Professional Portfolio & Investor Brief
 
-# --- Simple fields expected by pages (compat layer) ---
-name: "Devon Tyler"
-location: "Atlantic County, NJ"
-title: "Software Developer"
-bio: "Web development, automation, and digital infrastructure."
-email: "contact@xtx396.info"
+# --- Core Identity ---
+name: "Devon Tyler Barber"
+location: "Atlantic County, New Jersey"
+title: "Licensed Contractor & Business Owner"
+email: "info@Tillerstead.com"
 github: "DTB396"
+handle: "dTb396"
 website: "xtx396.info"
 
-# --- Structured source-of-truth (your original schema) ---
 identity:
-  legal_name: "Barber, Devon Tyler."
-  display_name: "Devon Tyler"
+  legal_name: "Barber, Devon Tyler"
+  display_name: "Devon Tyler Barber"
   handle: "dTb396"
-  headline: "Tiler | Builder | Systems Operator | Developer | Project Manager | Field-to-Product Expert"
-  descriptor: "Building durable systems, delivering practical tools, and documenting real-world execution—from job sites to code."
+  headline: "Licensed Contractor · Verified Business Owner · Community Builder"
+  tagline: "Building lasting value through quality craftsmanship, transparent operations, and verifiable track record."
+  descriptor: "From licensed construction to documented civic work—every project tracked, every claim verifiable."
   location:
     city: "Galloway Township"
     county: "Atlantic County"
     state: "New Jersey"
     country: "USA"
+    display: "Atlantic County, New Jersey"
 
+# --- Credentials & Licenses ---
+credentials:
+  - type: "License"
+    title: "NJ Home Improvement Contractor"
+    number: "13VH10808800"
+    issuer: "State of New Jersey"
+    status: "Active"
+  - type: "Education"
+    title: "Engineering Magnet (Honors)"
+    focus: "Sustainability & Permaculture"
+  - type: "Certification"
+    title: "TCNA Compliant Tiler"
+    description: "Tile Council of North America Standards"
+
+# --- Verifiable Capabilities ---
+skills:
+  - name: "NJ Licensed HIC"
+    icon: "license"
+    category: "Verified"
+  - name: "TCNA Certified"
+    icon: "tile"
+    category: "Verified"
+  - name: "Thumbtack Pro"
+    icon: "star"
+    category: "Verified"
+  - name: "Public Documentation"
+    icon: "document"
+    category: "Transparency"
+
+# --- Bio ---
 bio:
-  short: "Builder and systems operator, delivering practical tools, infrastructure, and well-documented workflows."
-  long: "Builder and systems-focused operator dedicated to creating durable systems, fostering ethical growth, and executing real-world solutions across construction, automation, and public documentation."
+  short: "Licensed NJ contractor with verifiable track record and transparent business operations."
+  long: "State-licensed Home Improvement Contractor (HIC #13VH10808800) operating Tillerstead LLC in Atlantic County, NJ. Every project documented, every claim verifiable. No hype—just proven execution."
 
+# --- Primary Links ---
 links:
   primary:
     - label: "Tillerstead LLC"
       url: "https://tillerstead.com"
-      note: "Construction & property care solutions (inegrated auxiliary)."
+      note: "Construction & property care solutions."
+      icon: "building"
     - label: "Faith Frontier"
       url: "https://faithfrontier.org"
-      note: "Stewardship, governance, and public accountability work."
+      note: "Stewardship, governance, and public accountability."
+      icon: "shield"
+    - label: "Thumbtack Pro"
+      url: "https://thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199"
+      note: "Verified professional services."
+      icon: "star"
     - label: "GitHub"
       url: "https://github.com/DTB396"
       note: "Tools, workflows, and documentation."
-    - label: "Trade Post"
-      url: "http://xtx396.info"
-      note: "Central hub for indexing and routing."
+      icon: "code"
+    - label: "Barber at the Gate"
+      url: "https://youtube.com/@xdtb369"
+      note: "Independent civic journalism."
+      icon: "video"
 
+# --- Contact Information ---
 contact:
-  email: "dTb33@pm.me"
+  business_phone: "+1 (609) 862-8808"
+  personal_phone: "+1 (640) 281-0197"
+  email: "info@Tillerstead.com"
+  email_alt: "dTb33@pm.me"
 
+# --- Payment Methods ---
+payments:
+  - name: "PayPal"
+    url: "https://paypal.com/donate/?hosted_button_id=uqajgxhjgw5pg"
+    type: "donate"
+  - name: "CashApp"
+    handle: "$devontyler33"
+    url: "https://cash.app/$devontyler33"
+    type: "payment"
+
+# --- Social Media ---
 social:
   github: "https://github.com/DTB396"
   linkedin: "https://www.linkedin.com/in/devon-tyler/"
-  x: "https://x.com/DTB396"
-  youtube: ""
-  instagram: ""
-  email: "contact@xtx396.info"
+  x: "https://x.com/dTb396"
+  youtube: "https://youtube.com/@xdtb369"
+  instagram: "https://instagram.com/xdTb369"
+  snapchat: "https://snapchat.com/add/Tillerstead"
+  facebook: "https://facebook.com/share/1kctc2jaud/?mibextid=wwxifr"
+  email: "info@Tillerstead.com"
 
+# --- Websites ---
+websites:
+  - label: "Tillerstead LLC"
+    url: "https://tillerstead.com"
+    primary: true
+  - label: "Faith Frontier"
+    url: "https://faithfrontier.org"
+    primary: true
+
+# --- Track Record & Opportunity ---
 now_next_looking:
- now:
-  - "Shipping field-tested tools and systems for real-world application."
-  - "Maintaining and iterating on active public projects with a focus on quality."
-  - "Documenting processes with clarity, durability, and compliance."
+  now:
+    - "Active NJ HIC License #13VH10808800 — State verified"
+    - "Tillerstead LLC — Operating, revenue-generating"
+    - "Thumbtack Pro status — Customer reviews available"
+    - "Public documentation — All work tracked"
 
-next:
-  - "Publishing additional demos with clear supporting documentation."
-  - "Refining automation and operational workflows for scalability and repeatability."
-  - "Packaging select tools for sustainable revenue streams (services, licensing, or support)."
+  next:
+    - "Scale operations across South Jersey market"
+    - "Build recurring revenue through maintenance contracts"
+    - "Expand digital presence with documented case studies"
 
-looking_for:
-  - "Collaborators aligned with long-term, ethical growth."
-  - "Early users providing constructive feedback to refine offerings."
-  - "Partners who value process, documentation, and accountability."
+  looking_for:
+    - "Strategic partners for business growth"
+    - "Investors seeking transparent, low-risk opportunities"
+    - "Long-term collaborators who verify before committing"
 
+# --- Boundaries ---
 boundaries:
   open_to:
-    - "Collaboration"
-    - "Product feedback"
-    - "Long-term partnerships"
+    - "Quality-focused collaboration"
+    - "Long-term client relationships"
+    - "Community partnerships"
+    - "Transparent project feedback"
   not_open_to:
+    - "Rushed or corner-cutting work"
     - "Hype-driven claims"
     - "Short-term extraction plays"
     - "Aggressive cold sales"

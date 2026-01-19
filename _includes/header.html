@@ -13,7 +13,7 @@
       <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}is-active{% endif %}">Home</a>
       <a href="{{ '/projects/' | relative_url }}" class="{% if page.url contains '/projects/' %}is-active{% endif %}">Projects</a>
       <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about/' %}is-active{% endif %}">About</a>
-      <a href="https://github.com/{{ site.data.profile.handle }}" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="#site-footer">Contact</a>
     </nav>
   </div>
@@ -23,7 +23,7 @@
       <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}is-active{% endif %}">Home</a>
       <a href="{{ '/projects/' | relative_url }}" class="{% if page.url contains '/projects/' %}is-active{% endif %}">Projects</a>
       <a href="{{ '/about/' | relative_url }}" class="{% if page.url contains '/about/' %}is-active{% endif %}">About</a>
-      <a href="https://github.com/{{ site.data.profile.handle }}" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="#site-footer">Contact</a>
     </div>
   </div>

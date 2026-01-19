@@ -1,41 +1,96 @@
-# Single source of truth for /projects cards + section lists.
-# Keep descriptions factual and stable; avoid hype/claims you can't verify publicly.
-#
-# Fields:
-# - title (required)
-# - url (required)
-# - description (recommended) 1–2 lines
-# - detail (optional) longer paragraph (used later if you add "read more" UI)
-# - tags (optional list)
-# - status (optional): active | in_development | archived
-# - featured (optional boolean)
-# - repo (optional): GitHub repo URL
-# - demo (optional): demo URL (if different)
-# - notes (optional): short, neutral disclaimer/context
+# Links & Quick Actions for xTx396.info
+# Updated: 2026-01-19 | Source: dot.cards/devt97
 
-pinned:
+# --- Primary Business Links ---
+business:
   - title: "Tillerstead LLC"
     url: "https://tillerstead.com/"
-    description: "Construction services with emphasis on compliant tile assemblies, remodel support, and general property maintenance."
-    detail: "Public hub for field work: tile/stone installations, repair/refresh scopes, small builds, and recurring maintenance. Content expands as services and portfolio items are published."
-    tags: ["Business", "Construction", "Tile", "Maintenance"]
-    status: active
+    description: "Construction services with emphasis on compliant tile assemblies and property maintenance."
+    icon: "building"
+    featured: true
+    badge: "NJ HIC #13VH10808800"
+
+  - title: "Thumbtack Pro ⭐️"
+    url: "https://thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199"
+    description: "Verified professional services with reviews and online booking."
+    icon: "star"
     featured: true
 
   - title: "Faith Frontier"
     url: "https://faithfrontier.org/"
-    description: "Mission-aligned publishing focused on stewardship, accountability, and transparent documentation."
-    detail: "Public site for governance materials, records, and long-form documentation. Designed for readability and auditability over time."
-    tags: ["Mission", "Governance", "Public Record"]
-    status: active
+    description: "Mission-aligned publishing for stewardship and accountability."
+    icon: "shield"
     featured: true
 
-  - title: "Barber Cam"
-    url: "https://barberx.info/"
-    description: "Public preview site for Barber Cam UI/UX experiments and demos."
-    detail: "Lightweight preview environment for visuals and workflows. Public content only; excludes private repository material and sensitive data."
-    tags: ["Tools", "Demo", "UI/UX"]
-    status: in_development
-    featured: true
+# --- Contact Methods ---
+contact:
+  - title: "Call or Text Tillerstead LLC"
+    value: "+1 (609) 862-8808"
+    url: "tel:+16098628808"
+    type: "phone"
+    icon: "phone"
+    primary: true
 
-// File removed: unused data
+  - title: "Email Project Details"
+    value: "info@Tillerstead.com"
+    url: "mailto:info@Tillerstead.com"
+    type: "email"
+    icon: "mail"
+    primary: true
+
+  - title: "Personal Phone"
+    value: "+1 (640) 281-0197"
+    url: "tel:+16402810197"
+    type: "phone"
+    icon: "phone"
+    primary: false
+
+# --- Social Media ---
+social:
+  - title: "Tyler's Instagram"
+    handle: "@xdTb369"
+    url: "https://instagram.com/xdTb369"
+    icon: "instagram"
+
+  - title: "Tyler's X (Twitter)"
+    handle: "@dTb396"
+    url: "https://x.com/dTb396"
+    icon: "x"
+
+  - title: "Tyler's Snapchat"
+    handle: "@Tillerstead"
+    url: "https://snapchat.com/add/Tillerstead"
+    icon: "snapchat"
+
+  - title: "Tillerstead Facebook"
+    url: "https://facebook.com/share/1kctc2jaud/?mibextid=wwxifr"
+    icon: "facebook"
+
+  - title: "LinkedIn"
+    url: "https://www.linkedin.com/in/devon-tyler/"
+    icon: "linkedin"
+
+  - title: "GitHub"
+    handle: "DTB396"
+    url: "https://github.com/DTB396"
+    icon: "github"
+
+# --- Media & Content ---
+media:
+  - title: "Barber at the Gate"
+    url: "https://youtube.com/@xdtb369"
+    description: "Independent civic journalism from Atlantic County, NJ."
+    icon: "youtube"
+
+# --- Payment Methods ---
+payments:
+  - title: "PayPal Donations"
+    url: "https://paypal.com/donate/?hosted_button_id=uqajgxhjgw5pg"
+    icon: "paypal"
+    type: "donate"
+
+  - title: "CashApp"
+    handle: "$devontyler33"
+    url: "https://cash.app/$devontyler33"
+    icon: "cashapp"
+    type: "payment"

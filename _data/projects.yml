@@ -1,14 +1,57 @@
 # Canonical project registry for xTx396.info
-# Each project must have a unique id, name, url, and summary.
-- id: xtx396
-  name: "xTx396.info Hub"
-  url: "/"
-  summary: "Main portfolio hub for Devon Tyler."
+# Focus: Verifiable businesses with clear value propositions
+
+# --- Active Businesses ---
+- id: tillerstead
+  name: "Tillerstead LLC"
+  url: "https://tillerstead.com/"
+  summary: "State-licensed construction company. NJ HIC #13VH10808800. Operating, revenue-generating."
+  description: "Full-service construction and property care in Atlantic County, NJ. TCNA-compliant tile installations, remodeling, and maintenance contracts."
+  tags: ["Licensed", "Revenue", "Verified"]
   priority: 1
   featured: true
-- id: open-source
-  name: "Open Source Contributions"
-  url: "https://github.com/DTB396"
-  summary: "Various open source projects and contributions on GitHub."
+  status: "active"
+  badge: "State Licensed"
+  verify_url: "https://newjersey.mylicense.com/verification/"
+
+- id: thumbtack
+  name: "Thumbtack Pro"
+  url: "https://thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199"
+  summary: "Verified professional with customer reviews. Third-party accountability."
+  description: "Professional services listing with real customer reviews and direct booking."
+  tags: ["Reviews", "Verified", "Booking"]
   priority: 2
+  featured: true
+  status: "active"
+  badge: "Pro Status"
+
+- id: faith-frontier
+  name: "Faith Frontier"
+  url: "https://faithfrontier.org/"
+  summary: "Nonprofit publishing arm. Public governance and accountability documentation."
+  description: "Mission-aligned publishing for stewardship, public records, and transparent governance."
+  tags: ["Nonprofit", "Governance", "Transparency"]
+  priority: 3
+  featured: true
+  status: "active"
+
+- id: barber-gate
+  name: "Barber at the Gate"
+  url: "https://youtube.com/@xdtb369"
+  summary: "Independent civic journalism. Local accountability and community voice."
+  description: "YouTube channel covering local governance and civic engagement in New Jersey."
+  tags: ["Media", "Civic", "YouTube"]
+  priority: 4
+  featured: true
+  status: "active"
+
+# --- Technical Assets ---
+- id: github
+  name: "GitHub Portfolio"
+  url: "https://github.com/DTB396"
+  summary: "Public code, tools, and documentation. Transparent development practices."
+  description: "Open source repositories demonstrating technical capability and documentation standards."
+  tags: ["Code", "Open Source", "Documentation"]
+  priority: 5
   featured: false
+  status: "active"
