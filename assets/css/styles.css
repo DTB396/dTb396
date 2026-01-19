@@ -1,148 +1,207 @@
-.hero__cta {
-  display: flex;
-  gap: 1rem;
-  margin: 1.5rem 0 1rem 0;
-}
+/* ========================================================================== 
+   xTx396.info — Premium Professional Portfolio 
+   High-end design system | 2026 
+   ========================================================================== */
 
-.panel {
-  background: var(--panel);
-  border-radius: var(--radius);
-  padding: 1.2rem 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--shadow);
-  min-width: 220px;
-  flex: 1 1 220px;
-}
-
-.nnl {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.panel h3 {
-  margin-top: 0;
-  margin-bottom: 0.7em;
-  font-size: 1.15em;
-}
-
-.panel ul {
-  margin: 0;
-  padding-left: 1.2em;
-}
-
-.panel li {
-  margin-bottom: 0.4em;
-}
-/* Minimal, clean, lint-compliant CSS for xTx396.info */
+/* -------------------------------------------------------------------------- 
+   CSS Custom Properties — Design Tokens 
+   -------------------------------------------------------------------------- */
 :root {
-  --bg: #090c16;
-  --panel: #101528;
-  --card: #0d1222;
-  --text: #eef2ff;
-  --muted: #a4b0d6;
-  --border: rgb(255 255 255 / 12%);
-  --accent: #7a9aff;
-  --accent2: #d6a84c;
-  --radius: 14px;
-  --shadow: 0 2px 12px rgb(0 0 0 / 10%);
-  --font: 'Space Grotesk', arial, sans-serif;
+  /* Color Palette — Deep Professional Navy with Gold Accents */
+  --color-bg-primary: #0a0e1a;
+  --color-bg-secondary: #0f1424;
+  --color-bg-elevated: #141b2d;
+  --color-bg-card: #1a2238;
+  --color-bg-glass: rgba(20, 27, 45, 0.85);
+  
+  /* Text Colors */
+  --color-text-primary: #f0f4ff;
+  --color-text-secondary: #a8b5d6;
+  --color-text-muted: #6b7a9e;
+  --color-text-inverse: #0a0e1a;
+  
+  /* Accent Colors — Professional Gold & Blue */
+  --color-accent-primary: #d4a853;
+  --color-accent-secondary: #5b8def;
+  --color-accent-tertiary: #4ecdc4;
+  --color-accent-light: #f4d794;
+  --color-accent-gradient: linear-gradient(135deg, #d4a853 0%, #f4d794 50%, #d4a853 100%);
+  --color-accent-glow: rgba(212, 168, 83, 0.4);
+  
+  /* Status Colors */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+  
+  /* Borders & Shadows */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+  --color-border-accent: rgba(212, 168, 83, 0.3);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(212, 168, 83, 0.15);
+  --shadow-glow-accent: 0 0 60px rgba(212, 168, 83, 0.2);
+  
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Font Sizes — Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.25vw, 0.95rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+  --text-lg: clamp(1.15rem, 1.1rem + 0.25vw, 1.25rem);
+  --text-xl: clamp(1.3rem, 1.2rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.6rem, 1.4rem + 1vw, 2rem);
+  --text-3xl: clamp(2rem, 1.6rem + 2vw, 2.75rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+  --text-hero: clamp(2.8rem, 2.2rem + 3vw, 4.5rem);
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-section: clamp(4rem, 8vw, 8rem);
+  
+  /* Layout */
+  --max-width: 1200px;
+  --max-width-narrow: 900px;
+  --max-width-text: 680px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Z-Index Scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-max: 9999;
+}
+
+/* Light Mode Override */
+@media (prefers-color-scheme: light) {
+  :root.auto-theme {
+    --color-bg-primary: #fafbff;
+    --color-bg-secondary: #f0f3fa;
+    --color-bg-elevated: #fff;
+    --color-bg-card: #fff;
+    --color-text-primary: #1a1f36;
+    --color-text-secondary: #4a5568;
+  }
+}
+
+/* CSS Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 32px 16px;
+/* Subtle animated background gradient */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 168, 83, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(91, 141, 239, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(78, 205, 196, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  padding: 10px 18px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  color: var(--text);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.18s, border 0.18s, transform 0.18s;
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+}
+
+/* Links */
+a {
+  color: var(--color-accent-secondary);
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
-.btn:hover, .btn:focus {
-  background: var(--accent);
-  border-color: var(--accent2);
-  color: #fff;
-  outline: none;
-  transform: translateY(-2px) scale(1.04);
+a:hover {
+  color: var(--color-accent-primary);
 }
 
-.project-list {
+/* Images */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lists */
+ul,
+ol {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 18px;
 }
 
-.project-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--card);
-  padding: 18px 20px;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* Skip Link */
+.skip {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  z-index: var(--z-max);
+  transition: top var(--transition-fast);
 }
 
-.project-card-title {
-  font-size: 1.18em;
-  font-weight: 700;
-  margin: 0 0 2px;
-}
-
-.project-card-summary {
-  color: var(--muted);
-  font-size: 1em;
-  margin: 0;
-}
-
-header, footer {
-  text-align: center;
-  padding: 18px 0;
-  color: var(--muted);
-  font-size: 1.1em;
-}
-
-.iconbtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--panel);
-  color: var(--text);
-  border: 1px solid var(--border);
-  margin: 0 4px;
-  transition: background 0.18s, border 0.18s, color 0.18s;
-  text-decoration: none;
-  font-size: 1.2em;
-}
-.iconbtn:hover, .iconbtn:focus {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent2);
-  outline: none;
+.skip:focus {
+  top: var(--space-md);
 }
